@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | JIANSH Spark Plugs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #FF3333;
+            --bg-dark: #000;
+            --text-main: #fff;
+            --text-muted: #A0A0A0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: rgba(0, 0, 0, 0.9);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo {
+            font-weight: 900;
+            font-size: 1.5rem;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .header {
+            padding: 100px 8%;
+            text-align: center;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/hero_bg.png');
+            background-size: cover;
+        }
+
+        .header h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        .header h1 span {
+            color: var(--primary);
+        }
+
+        .content {
+            padding: 80px 8%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .content h2 span {
+            color: var(--primary);
+        }
+
+        .content p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .img-box {
+            background: #111;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .img-box img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        footer {
+            padding: 40px 8%;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">JIAN<span>SH</span></div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html" style="color: var(--primary);">About</a>
+            <a href="quality.html">Quality Checks</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+    <header class="header">
+        <h1>About <span>JIANSH</span></h1>
+        <p>Engineering Excellence in Every Spark</p>
+    </header>
+    <section class="content">
+        <div>
+            <h2>Our <span>Story</span></h2>
+            <p>JIANSH Spark Plugs was founded with a singular vision: to manufacture spark plugs that set new standards
+                in performance, reliability, and durability. What began as a commitment to quality has evolved into a
+                legacy of excellence in the automotive industry.</p>
+            <p>Located in Ghaziabad, our state-of-the-art manufacturing facility combines traditional craftsmanship with
+                cutting-edge technology. Every spark plug that leaves our facility represents our unwavering dedication
+                to precision engineering.</p>
+        </div>
+        <div class="img-box">
+            <img src="images/plug2_clean.png" alt="About JIANSH">
+        </div>
+    </section>
+    <footer>&copy; 2026 JIANSH Spark Plugs. All Rights Reserved.</footer>
+</body>
+
+</html>

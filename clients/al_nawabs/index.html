@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Al-Nawabs | Royal Mughlai Dining Experience in Okhla, New Delhi</title>
+    <meta name="description"
+        content="Savor the royal taste of Mughlai cuisine at Al-Nawabs. Exquisite biryanis, succulent kebabs, and a majestic atmosphere in Shaheen Bagh, Jamia Nagar.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Lora:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary: #540B0B;
+            /* Royal Maroon */
+            --gold: #BF953F;
+            --cream: #FDF7E5;
+            --dark: #1A1110;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lora', serif;
+            background: var(--cream);
+            color: var(--dark);
+            line-height: 1.7;
+        }
+
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('images/hero.png');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 0 10%;
+        }
+
+        .hero h1 {
+            font-family: 'Cinzel Decorative', cursive;
+            font-size: clamp(3rem, 10vw, 6rem);
+            margin-bottom: 20px;
+            color: var(--gold);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            border-top: 1px solid var(--gold);
+            border-bottom: 1px solid var(--gold);
+            display: inline-block;
+            padding: 10px 40px;
+            margin-bottom: 40px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 20px 60px;
+            background: var(--gold);
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            transition: 0.5s;
+        }
+
+        .btn:hover {
+            background: white;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        section {
+            padding: 120px 10%;
+        }
+
+        .intro {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .intro h2 {
+            font-family: 'Cinzel Decorative', cursive;
+            font-size: 3rem;
+            margin-bottom: 30px;
+            color: var(--primary);
+        }
+
+        .highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 50px;
+            margin-top: 80px;
+        }
+
+        .highlight-item {
+            text-align: center;
+        }
+
+        .highlight-item h3 {
+            font-family: 'Cinzel Decorative', cursive;
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .reservation {
+            background: var(--dark);
+            color: white;
+            padding: 100px;
+            border-radius: 4px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .reservation h2 {
+            font-family: 'Cinzel Decorative', cursive;
+            font-size: 3.5rem;
+            margin-bottom: 30px;
+            color: var(--gold);
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--gold);
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        ::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .whatsapp {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            background: #25D366;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 2rem;
+        }
+
+        @media (max-width: 1024px) {
+            .reservation {
+                grid-template-columns: 1fr;
+                padding: 60px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hero">
+        <div>
+            <h1>AL-NAWABS</h1>
+            <p>The Royal Banquet</p>
+            <br>
+            <a href="#reserve" class="btn">Order Feast</a>
+            <p style="margin-top:40px; font-style: italic; letter-spacing:0;">Rated 4.8/5 | Over 250 Royal Testimonials
+            </p>
+        </div>
+    </div>
+
+    <section>
+        <div class="intro">
+            <h2>Dine Like Royalty</h2>
+            <p>Al-Nawabs brings the majestic culinary traditions of the Mughal era to Shaheen Bagh. Every dish is a
+                masterpiece of spice, texture, and heritage, crafted by master chefs specializing in authentic Mughlai
+                flavors.</p>
+        </div>
+        <div class="highlights">
+            <div class="highlight-item">
+                <h3>Royal Biryani</h3>
+                <p>Long-grain basmati, slow-cooked with tender meat and a secret blend of 21 exotic spices.</p>
+            </div>
+            <div class="highlight-item">
+                <h3>House Kebabs</h3>
+                <p>Succulent, melt-in-your-mouth charcoal grill specialties, prepared fresh for every order.</p>
+            </div>
+            <div class="highlight-item">
+                <h3>Imperial Ambiance</h3>
+                <p>Experience a dining atmosphere fit for kings, where every guest is treated as a Nawab.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="reserve">
+        <div class="reservation">
+            <div>
+                <h2>Book Your <span>Imperial Table</span></h2>
+                <p style="margin-bottom:30px; opacity:0.8;">Experience the true taste of Mughlai heritage. Early
+                    reservations recommended for weekend dining.</p>
+                <p><strong>📍 Location:</strong> A-94, 95, Shaheen Bagh, Jamia Nagar, Okhla, New Delhi</p>
+                <p style="margin-top:20px;"><strong>📞 Delivery & Reservations:</strong> 098111 11364</p>
+            </div>
+            <form
+                onsubmit="event.preventDefault(); alert('Request Received! Our Royal Concierge will confirm your booking shortly.')">
+                <input type="text" placeholder="GUEST NAME" required>
+                <input type="tel" placeholder="CONTACT NUMBER" required>
+                <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px;">
+                    <input type="date" required>
+                    <select required>
+                        <option value="">COVERS</option>
+                        <option>2 Nawabs</option>
+                        <option>4 Nawabs</option>
+                        <option>6+ Nawabs</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn" style="width:100%">Submit Request</button>
+            </form>
+        </div>
+    </section>
+
+    <a href="https://wa.me/919811111364" class="whatsapp">👑</a>
+
+    <footer style="padding:40px; text-align:center; opacity:0.4; font-size:0.8rem;">
+        &copy; 2026 Al-Nawabs. Royal Digital Presence by Antigravity.
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AK Fitness | Professional Strength & Results Gym in Bhogal, New Delhi</title>
+    <meta name="description"
+        content="Join AK Fitness in Bhogal for a professional strength training experience. High-rated gym with expert guidance and a results-driven atmosphere.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1E4E79;
+            --dark: #0F172A;
+            --light: #F8FAFC;
+            --accent: #38BDF8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        header {
+            height: 90vh;
+            background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.8)), url('images/hero.png');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            color: white;
+            padding: 0 10%;
+        }
+
+        .hero-content h1 {
+            font-size: 5rem;
+            font-weight: 900;
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            max-width: 500px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 18px 40px;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 4px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: var(--accent);
+            transform: scale(1.05);
+        }
+
+        section {
+            padding: 100px 10%;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .card {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .contact-box {
+            background: var(--dark);
+            color: white;
+            border-radius: 20px;
+            padding: 60px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        .contact-box h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            border: 1px solid #334155;
+            background: #1E293B;
+            color: white;
+        }
+
+        .whatsapp {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            text-decoration: none;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+
+            .contact-box {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="hero-content">
+            <p style="color:var(--accent); text-transform:uppercase; letter-spacing:3px; font-weight:700;">Established
+                Strength</p>
+            <h1>Commit to <span>Greatness.</span></h1>
+            <p>AK Fitness is Bhogal's premier strength destination. Professional environment, elite equipment, and a
+                4.8-star rated experience.</p>
+            <a href="#join" class="btn">Get Started Now</a>
+        </div>
+    </header>
+
+    <section>
+        <div class="grid">
+            <div class="card">
+                <h3>Strength Focused</h3>
+                <p>We specialize in heavy lifting and strength conditioning. Our facility is designed for those who take
+                    their gains seriously.</p>
+            </div>
+            <div class="card">
+                <h3>Expert Guidance</h3>
+                <p>Learn from trainers who live the lifestyle. Proper form, periodized programs, and Nutritional
+                    support.</p>
+            </div>
+            <div class="card">
+                <h3>Community of 400+</h3>
+                <p>Join Bhogal's most motivated fitness community. 430+ reviews don't lie—we deliver results.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="join">
+        <div class="contact-box">
+            <div>
+                <h2>Find Your <span>Power.</span></h2>
+                <p style="opacity:0.7; margin-bottom:40px;">Located conveniently in Bhogal, Delhi. Visit us today for a
+                    tour.</p>
+                <p><strong>📍 Location:</strong> 370, Hospital Rd., opposite Delhi, above Apollo Pharmacy, Bhogal, New
+                    Delhi, Delhi 110025</p>
+                <p style="margin-top:20px;"><strong>📞 Call:</strong> 098104 41562</p>
+            </div>
+            <form onsubmit="event.preventDefault(); alert('We have received your request. Get ready to transform!')">
+                <input type="text" placeholder="Full Name" required>
+                <input type="tel" placeholder="Phone Number" required>
+                <textarea rows="4" placeholder="How can we help you reach your goals?"></textarea>
+                <button type="submit" class="btn" style="width:100%">Book Consultation</button>
+            </form>
+        </div>
+    </section>
+
+    <a href="https://wa.me/919810441562" class="whatsapp">W</a>
+
+    <footer style="padding:40px; text-align:center; opacity:0.6; font-size:0.8rem;">
+        &copy; 2026 AK Fitness. Premium Gym Solutions by Antigravity.
+    </footer>
+</body>
+
+</html>

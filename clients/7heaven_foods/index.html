@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7Heaven Foods | Authentic North Indian Fine Dining in Lajpat Nagar, Delhi</title>
+    <meta name="description"
+        content="Experience the heavenly flavors of North India at 7Heaven Foods. Exquisite butter chicken, artisanal naans, and a premium dining experience in Lajpat Nagar.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Outfit:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary: #8B1A1A;
+            /* Deep Crimson */
+            --gold: #D4AF37;
+            --cream: #FFFDF5;
+            --dark: #121212;
+            --text: #333333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--cream);
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        header {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('images/hero.png');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 10vw, 6rem);
+            font-weight: 900;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+        }
+
+        .btn {
+            padding: 20px 50px;
+            background: var(--gold);
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            transition: 0.4s;
+            border-radius: 2px;
+        }
+
+        .btn:hover {
+            background: white;
+            transform: translateY(-5px);
+        }
+
+        section {
+            padding: 120px 10%;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 60px;
+        }
+
+        .food-card {
+            text-align: center;
+        }
+
+        .food-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .reservation {
+            background: var(--dark);
+            color: white;
+            padding: 100px;
+            text-align: center;
+            border-radius: 4px;
+        }
+
+        .reservation h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin-bottom: 30px;
+            color: var(--gold);
+        }
+
+        .contact-details {
+            font-size: 1.2rem;
+            margin-bottom: 50px;
+            opacity: 0.8;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+
+        ::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .whatsapp {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            background: #25D366;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .reservation {
+                padding: 60px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="hero">
+        <p>A Taste of the Heavens</p>
+        <h1>7HEAVEN <span>FOODS</span></h1>
+        <a href="#book" class="btn">Reserve a Table</a>
+        <div style="margin-top: 50px; font-weight: 700;">
+            <span style="color:var(--gold)">4.8/5 Rating</span> | 250+ Happy Reviews
+        </div>
+    </header>
+
+    <section>
+        <div class="grid">
+            <div class="food-card">
+                <h3>Signature Curries</h3>
+                <p>Meticulously prepared using generational recipes and freshly ground spices for an explosion of North
+                    Indian flavor.</p>
+            </div>
+            <div class="food-card">
+                <h3>Clay Oven Art</h3>
+                <p>Our naans and kebabs are fired in traditional tandoors, delivering the perfect smoky char and
+                    tenderness.</p>
+            </div>
+            <div class="food-card">
+                <h3>Elegant Ambiance</h3>
+                <p>A premium dining setting designed for family celebrations and intimate dinner experiences.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="book">
+        <div class="reservation">
+            <h2>Experience Perfection</h2>
+            <div class="contact-details">
+                <p>A/88, Vaishno Devi Marg, Block A, Lajpat Nagar I, New Delhi</p>
+                <p style="margin-top:10px;">📞 093122 13082</p>
+            </div>
+            <form
+                onsubmit="event.preventDefault(); alert('Your table is being prepared. We will confirm your reservation shortly.')">
+                <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="tel" placeholder="Phone Number" required>
+                </div>
+                <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <input type="date" required>
+                    <select required>
+                        <option value="">Guests</option>
+                        <option>2 People</option>
+                        <option>4 People</option>
+                        <option>6+ People</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn" style="width:100%">Book Now</button>
+            </form>
+        </div>
+    </section>
+
+    <a href="https://wa.me/919312213082" class="whatsapp">🍴</a>
+
+    <footer style="padding:40px; text-align:center; opacity:0.6; font-size:0.8rem;">
+        &copy; 2026 7Heaven Foods. A Premium Presentation by Antigravity.
+    </footer>
+</body>
+
+</html>

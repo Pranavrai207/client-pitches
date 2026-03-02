@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aesthetix Fitness | Premium Boutique Studio in Safdarjung Enclave</title>
+    <meta name="description"
+        content="Discover Aesthetix Fitness, New Delhi's premier boutique fitness studio. Personalized training, minimalist aesthetic, and high-performance results.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Montserrat:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --accent: #4A5D4E;
+            /* Sage Green */
+            --bg: #F9F9F7;
+            --text: #1A1A1A;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        nav {
+            padding: 40px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Tenor Sans', sans-serif;
+            font-size: 1.5rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--accent);
+        }
+
+        .hero {
+            height: 80vh;
+            margin: 0 5%;
+            background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('images/hero.png');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            border-radius: 20px;
+        }
+
+        .hero-content h1 {
+            font-family: 'Tenor Sans', serif;
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 20px 45px;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.8rem;
+            border-radius: 100px;
+            transition: 0.4s;
+        }
+
+        .btn:hover {
+            background: var(--text);
+            transform: translateY(-5px);
+        }
+
+        section {
+            padding: 100px 10%;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 100px;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-family: 'Tenor Sans', serif;
+            font-size: 3rem;
+            margin-bottom: 30px;
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 50px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+        }
+
+        .service-card h3 {
+            font-family: 'Tenor Sans', serif;
+            margin-bottom: 15px;
+            color: var(--accent);
+        }
+
+        .booking {
+            background: var(--accent);
+            color: white;
+            border-radius: 30px;
+            padding: 100px 10%;
+            text-align: center;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 40px auto 0;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 20px;
+            margin-bottom: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            color: white;
+        }
+
+        ::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        @media (max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .hero {
+                margin: 0;
+                border-radius: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">Aesthetix</div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Sculpt Your <span>Masterpiece</span></h1>
+            <p style="margin-bottom:40px; text-transform:uppercase; letter-spacing:4px; font-weight:300;">Safdarjung
+                Enclave's Premier Studio</p>
+            <a href="#book" class="btn">Begin the Transformation</a>
+        </div>
+    </header>
+
+    <section>
+        <div class="about-grid">
+            <div class="about-text">
+                <h2>The Art of <span>Fitness</span></h2>
+                <p>At Aesthetix Fitness, we believe physical conditioning is a form of design. Our boutique studio
+                    provides a curated environment where biomechanics meets minimalist luxury.</p>
+                <p style="margin-top:20px;">Rated 4.8/5 by Delhi's most discerning fitness enthusiasts.</p>
+            </div>
+            <div class="services">
+                <div class="service-card">
+                    <h3>Personal Coaching</h3>
+                    <p>One-on-one sessions tailored to your unique anatomical goals.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Rehab & Strength</h3>
+                    <p>Scientifically-backed protocols for recovery and growth.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="book">
+        <div class="booking">
+            <h2 style="font-family:'Tenor Sans'; font-size:3rem;">Reservation</h2>
+            <p>Ready to experience the Aesthetix difference? Visit us at:</p>
+            <p style="font-weight:600; margin-top:20px;">B-7/17 Basement Safdarjung Enclave Extension, New Delhi</p>
+            <p style="font-weight:600;">📞 076781 42448</p>
+
+            <div class="form-container">
+                <form
+                    onsubmit="event.preventDefault(); alert('Your request is being processed. We look forward to seeing you.')">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="tel" placeholder="Phone Number" required>
+                    <textarea rows="3" placeholder="Fitness goals or injuries we should know about?"></textarea>
+                    <button type="submit" class="btn" style="background:white; color:var(--accent);">Reqest
+                        Consultation</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer style="padding:40px; text-align:center; opacity:0.4; font-size:0.8rem;">
+        &copy; 2026 Aesthetix Fitness. Designed by Antigravity for premium local businesses.
+    </footer>
+</body>
+
+</html>

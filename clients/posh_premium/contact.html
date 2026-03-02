@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Posh by Charms Salon</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,700;1,300&family=Montserrat:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --accent: #D4AF37;
+            --bg-dark: #1A1A1A;
+            --text-main: #333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #FDFCFB;
+            color: var(--text-main);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: white;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #eee;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            color: var(--accent);
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #666;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 80vh;
+            padding: 100px 10%;
+            gap: 100px;
+        }
+
+        .info h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4rem;
+            font-weight: 300;
+            margin-bottom: 40px;
+        }
+
+        .contact-detail {
+            margin-bottom: 30px;
+        }
+
+        .contact-detail h4 {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.75rem;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+
+        .contact-detail p {
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        form {
+            background: white;
+            padding: 60px;
+            box-shadow: 0 40px 60px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-bottom: 1px solid #ddd;
+            font-family: inherit;
+            transition: 0.3s;
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-bottom-color: var(--accent);
+        }
+
+        .btn {
+            background: var(--bg-dark);
+            color: white;
+            border: none;
+            padding: 20px 40px;
+            width: 100%;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 2px;
+            cursor: pointer;
+        }
+
+        .whatsapp {
+            display: block;
+            text-align: center;
+            padding: 15px;
+            background: #25D366;
+            color: white;
+            text-decoration: none;
+            margin-top: 20px;
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="index.html" class="logo">Posh</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html" style="color:var(--accent)">Contact</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="info">
+            <h1>Connect <span>With Us</span></h1>
+            <div class="contact-detail">
+                <h4>Address</h4>
+                <p>M-63, Block M, Lajpat Nagar II,<br>New Delhi, Delhi 110024</p>
+            </div>
+            <div class="contact-detail">
+                <h4>Phone</h4>
+                <p>011 4015 7262</p>
+            </div>
+            <div class="contact-detail">
+                <h4>Hours</h4>
+                <p>Mon - Sun: 10:00 AM - 08:30 PM</p>
+            </div>
+            <a href="https://wa.me/911140157262" class="whatsapp">Chat on WhatsApp</a>
+        </div>
+        <form onsubmit="event.preventDefault(); alert('Booking Inquiry Received! We will call you back.')">
+            <div class="form-group"><input type="text" placeholder="Full Name" required></div>
+            <div class="form-group"><input type="email" placeholder="Email Address" required></div>
+            <div class="form-group"><input type="tel" placeholder="Phone Number" required></div>
+            <div class="form-group"><textarea rows="4" placeholder="Desired Service & Date"></textarea></div>
+            <button type="submit" class="btn">Request Booking</button>
+        </form>
+    </div>
+    <footer style="padding:40px; text-align:center; color:#999; font-size:0.8rem; border-top:1px solid #eee;">
+        &copy; 2026 Posh by Charms Salon. Crafted with Precision.
+    </footer>
+</body>
+
+</html>
