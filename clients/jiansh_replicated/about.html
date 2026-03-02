@@ -130,6 +130,11 @@
 <body>
     <nav>
         <div class="logo">JIAN<span>SH</span></div>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
         <div class="nav-links">
             <a href="index.html">Home</a>
             <a href="about.html" style="color: var(--primary);">About</a>
@@ -156,6 +161,17 @@
         </div>
     </section>
     <footer>&copy; 2026 JIANSH Spark Plugs. All Rights Reserved.</footer>
+
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+        if (mobileMenu && navLinks) {
+            mobileMenu.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+        }
+    </script>
 </body>
 
 </html>

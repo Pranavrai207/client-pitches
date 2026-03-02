@@ -298,7 +298,48 @@
         }
 
         /* Responsive */
+        
+        /* Hamburger Menu */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .bar {
+            width: 25px;
+            height: 3px;
+            background-color: var(--text-main, #fff); /* Fallback to white if var not defined */
+            margin: 4px 0;
+            transition: 0.4s;
+            border-radius: 3px;
+        }
+
         @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+
+            .nav-links {
+                display: none !important; /* Override standard hiding */
+                flex-direction: column;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: rgba(26, 26, 26, 0.95);
+                backdrop-filter: blur(10px);
+                border-bottom: 1px solid var(--border, rgba(255,255,255,0.1));
+                padding: 20px 0;
+                text-align: center;
+                gap: 15px;
+            }
+
+            .nav-links.active {
+                display: flex !important;
+            }
+
             .nav-links {
                 display: none;
             }
@@ -387,6 +428,11 @@
 
     <nav>
         <div class="logo">JIAN<span>SH</span></div>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
         <div class="nav-links">
             <a href="index.html" class="active">Home</a>
             <a href="about.html">About</a>
@@ -480,6 +526,17 @@
         &copy; 2026 JIANSH Spark Plugs. All Rights Reserved. | Crafted with Precision
     </div>
 
+
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+        if (mobileMenu && navLinks) {
+            mobileMenu.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+        }
+    </script>
 </body>
 
 </html>
