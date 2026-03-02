@@ -214,11 +214,32 @@
             font-size: 0.8rem;
         }
 
+        /* Hamburger Menu */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .bar {
+            width: 25px;
+            height: 3px;
+            background-color: var(--text-main);
+            margin: 4px 0;
+            transition: 0.4s;
+            border-radius: 3px;
+        }
+
         @media (max-width: 768px) {
             nav {
-                padding: 10px 20px;
+                padding: 15px 20px;
                 width: 95%;
-                justify-content: center;
+                justify-content: space-between;
+            }
+
+            .menu-toggle {
+                display: flex;
             }
 
             nav .cta-btn {
@@ -227,6 +248,22 @@
 
             .nav-links {
                 display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: rgba(26, 26, 26, 0.95);
+                backdrop-filter: blur(10px);
+                border: 1px solid var(--border);
+                border-radius: 20px;
+                padding: 20px 0;
+                text-align: center;
+                gap: 15px;
+            }
+
+            .nav-links.active {
+                display: flex;
             }
 
             .hero h1 {
@@ -276,6 +313,11 @@
 
     <nav>
         <div class="logo">Refections Cafe.</div>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
         <ul class="nav-links">
             <li><a href="#">Menu</a></li>
             <li><a href="#">Location</a></li>
@@ -328,6 +370,14 @@
         <div>Crafted with Precision</div>
     </footer>
 
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
 </body>
 
 </html>
