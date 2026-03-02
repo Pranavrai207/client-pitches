@@ -275,27 +275,66 @@
             margin-bottom: 30px;
         }
 
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-50px);
+        @media (max-width: 768px) {
+            nav {
+                padding: 20px 5%;
+                justify-content: center;
             }
 
-            to {
-                opacity: 1;
-                transform: translateY(0);
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 3.2rem;
+            }
+
+            .hero p {
+                font-size: 0.9rem;
+                letter-spacing: 2px;
+            }
+
+            .stats-bar {
+                flex-direction: column;
+                gap: 40px;
+                padding: 40px 0;
+            }
+
+            .stat-item h2 {
+                font-size: 2.5rem;
+            }
+
+            .reviews-section {
+                padding: 60px 5%;
+            }
+
+            .section-title h2 {
+                font-size: 2.5rem;
+            }
+
+            .review-box {
+                padding: 20px;
+            }
+
+            .location-section {
+                grid-template-columns: 1fr;
+                padding: 60px 5%;
+                gap: 40px;
+                text-align: center;
+            }
+
+            .map-container {
+                height: 300px;
+            }
+
+            .location-section a {
+                margin: 0 auto;
             }
         }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 3rem;
             }
         }
     </style>

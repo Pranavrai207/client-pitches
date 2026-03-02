@@ -177,6 +177,7 @@
             margin-bottom: 20px;
             background: linear-gradient(to bottom, #fff, #888);
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
@@ -324,7 +325,48 @@
             }
 
             .hero h1 {
-                font-size: 4rem;
+                font-size: 3.5rem;
+            }
+
+            .hero p {
+                font-size: 0.9rem;
+                letter-spacing: 1px;
+            }
+
+            .stats-grid {
+                gap: 30px;
+                flex-wrap: wrap;
+            }
+
+            .section {
+                padding: 60px 5%;
+            }
+
+            .section-header h2 {
+                font-size: 2.5rem;
+            }
+
+            .service-card {
+                height: 400px;
+                padding: 30px;
+            }
+
+            .service-info h3 {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .stat-item h3 {
+                font-size: 2rem;
+            }
+
+            .phone-link {
+                font-size: 1.5rem;
             }
         }
     </style>

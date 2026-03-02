@@ -114,6 +114,12 @@
             text-align: center;
         }
 
+        @media (max-width: 768px) {
+            .services {
+                padding: 60px 20px;
+            }
+        }
+
         .section-header {
             margin-bottom: 80px;
         }
@@ -156,6 +162,48 @@
         .closing {
             padding: 150px 10%;
             text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .closing {
+                padding: 80px 20px;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .section-header h2 {
+                font-size: 2.2rem;
+            }
+
+            .service-card {
+                padding: 40px 20px;
+            }
+
+            .closing h2 {
+                font-size: 2.5rem;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+
+            nav {
+                padding: 20px 5%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 0.9rem;
+            }
         }
 
         .closing h2 {

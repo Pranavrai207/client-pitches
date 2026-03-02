@@ -84,10 +84,24 @@
             padding: 100px 10%;
         }
 
+        @media (max-width: 768px) {
+            section {
+                padding: 60px 20px;
+            }
+        }
+
         .about {
             display: flex;
             gap: 80px;
             align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .about {
+                flex-direction: column;
+                gap: 40px;
+                text-align: center;
+            }
         }
 
         .about-text h2 {
@@ -158,11 +172,37 @@
 
         @media (max-width: 768px) {
             .hero-content h1 {
-                font-size: 3.5rem;
+                font-size: 3rem;
+            }
+
+            .about-text h2 {
+                font-size: 2.22rem;
             }
 
             .contact {
                 grid-template-columns: 1fr;
+                gap: 50px;
+                padding: 60px 20px;
+            }
+
+            .contact h2 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero {
+                padding: 0 20px;
+            }
+
+            .btn {
+                padding: 15px 30px;
+                width: 100%;
+                text-align: center;
             }
         }
     </style>

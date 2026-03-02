@@ -91,6 +91,12 @@
             padding: 100px 10%;
         }
 
+        @media (max-width: 768px) {
+            section {
+                padding: 60px 20px;
+            }
+        }
+
         .about-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -161,6 +167,35 @@
             .hero {
                 margin: 0;
                 border-radius: 0;
+                height: 70vh;
+            }
+
+            .about-text h2 {
+                font-size: 2.2rem;
+            }
+
+            .service-card {
+                padding: 30px;
+            }
+
+            .booking {
+                padding: 60px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .btn {
+                padding: 15px 30px;
+                width: 100%;
+                text-align: center;
+            }
+
+            .logo {
+                font-size: 1.2rem;
             }
         }
     </style>
