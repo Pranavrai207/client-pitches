@@ -271,15 +271,18 @@
         gap: 15px !important;
     }
     
-    /* Button formatting */
+    /* Button formatting - Fixed from massive size */
     .btn, .cta-btn, button {
-        padding: 12px 24px !important;
-        font-size: 1rem !important;
-        width: 100% !important;
+        padding: 14px 28px !important;
+        font-size: 16px !important;
+        width: auto !important;
+        max-width: 100% !important;
         text-align: center !important;
         box-sizing: border-box !important;
         margin-top: 10px !important;
-        display: block !important;
+        display: inline-block !important;
+        min-height: 48px !important; /* Thumb-friendly mobile standard */
+        border-radius: 50px !important; /* Premium feel */
     }
     
     /* Global fixes for horizontal scroll */
