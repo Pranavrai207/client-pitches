@@ -1,0 +1,118 @@
+{
+    "design_standards_v2": {
+        "layout_container": {
+            "mobile_max_width": "100%",
+            "tablet_width_range": "90-95%",
+            "laptop_max_width_px": 1200,
+            "large_desktop_max_width_px": 1320,
+            "default_max_width_px": 1200
+        },
+        "breakpoints": {
+            "small_mobile": "320px-480px",
+            "large_mobile": "481px-768px",
+            "tablet": "769px-1024px",
+            "laptop": "1025px-1440px",
+            "large_desktop": "1441px+"
+        },
+        "mandatory_skeleton": [
+            "header",
+            "nav",
+            "main [hero, about, services, reviews, cta]",
+            "footer"
+        ],
+        "hero_section": {
+            "desktop": {
+                "height": "80vh-100vh",
+                "padding_min_px": 80,
+                "h1_px_range": "48-64"
+            },
+            "mobile": {
+                "height_min": "60vh",
+                "padding_px": 40,
+                "h1_px_range": "28-36"
+            }
+        },
+        "typography": {
+            "desktop": {
+                "h1_px": "48-64",
+                "h2_px": "32-40",
+                "h3_px": "24-28",
+                "body_px": "16-18"
+            },
+            "mobile": {
+                "h1_px": "28-34",
+                "h2_px": "22-26",
+                "body_px": "15-16"
+            },
+            "absolute_min_body_px": 14,
+            "max_font_families": 2,
+            "max_font_weights": 5
+        },
+        "spacing_system": {
+            "scale_px": [
+                8,
+                16,
+                24,
+                32,
+                40,
+                48,
+                64,
+                80,
+                100,
+                120
+            ],
+            "section_padding_desktop_px": "80-120",
+            "section_padding_mobile_px": "50-70"
+        },
+        "buttons": {
+            "desktop": {
+                "height_px": "45-55",
+                "padding": "12px 24px"
+            },
+            "mobile": {
+                "min_height_px": 48,
+                "full_width_recommended": true
+            }
+        },
+        "navbar": {
+            "desktop_height_px": "70-90",
+            "mobile_height_px": "60-70",
+            "sticky": true,
+            "collapse_at_px": 768
+        },
+        "cards": {
+            "desktop_per_row": 3,
+            "tablet_per_row": 2,
+            "mobile_per_row": 1,
+            "gap_px": "24-32"
+        },
+        "constraints": {
+            "max_primary_colors": 3,
+            "max_font_families": 2,
+            "no_gradients": true,
+            "no_inline_css": true,
+            "no_unused_classes": true,
+            "no_unnecessary_js": true,
+            "min_font_size_px": 15
+        },
+        "images": {
+            "dimensions": {
+                "hero": "1920x1080",
+                "cards": "600x400",
+                "blog_og": "1200x630"
+            },
+            "optimization": {
+                "widths_px": [
+                    480,
+                    800,
+                    1200,
+                    1920
+                ],
+                "format": "webp",
+                "max_size_kb": 300,
+                "srcset": true,
+                "lazy_loading": true
+            }
+        }
+    }
+}

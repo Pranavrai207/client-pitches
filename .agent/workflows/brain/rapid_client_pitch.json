@@ -1,0 +1,81 @@
+{
+    "rapid_client_pitch_protocol": {
+        "project_intake": [
+            "Business Name",
+            "Category",
+            "Rating",
+            "Number of Reviews",
+            "Address",
+            "Phone",
+            "Primary Services",
+            "USP"
+        ],
+        "folder_structure": {
+            "root": "/client-name/",
+            "assets": [
+                "images",
+                "css",
+                "js"
+            ],
+            "naming_convention": "snake_case"
+        },
+        "asset_rules": {
+            "min_images": 5,
+            "format": "webp",
+            "max_file_size_kb": 300,
+            "srcset_widths": [
+                480,
+                800,
+                1200,
+                1920
+            ],
+            "mandatory_physical_verification": true
+        },
+        "ui_logic": {
+            "compliance": "design_standards.json",
+            "mobile_first": true,
+            "sticky_navbar": true,
+            "anti_overflow": "overflow-x: hidden",
+            "skeleton_order": [
+                "hero",
+                "about",
+                "services",
+                "reviews",
+                "cta"
+            ]
+        },
+        "seo_protocol": {
+            "json_ld": "LocalBusiness",
+            "title_limit": 60,
+            "meta_limit": 160,
+            "semantic_html": true
+        },
+        "white_label_protocol": {
+            "forbidden_strings": [
+                "Built by Antigravity",
+                "AI signature",
+                "by AI",
+                "Antigravity"
+            ],
+            "allowed_footer_text": [
+                "© Copyright",
+                "Crafted with Precision"
+            ]
+        },
+        "verification_checklist": [
+            "Max width 1200px",
+            "8px spacing system",
+            "WebP + srcset confirmed",
+            "Lazy loading active",
+            "JSON-LD present",
+            "Zero AI branding/signature",
+            "URL contains /clients/ segment",
+            "Lighthouse Score 90/95/90 targets"
+        ],
+        "deployment": {
+            "command": "deploy.py [client_folder]",
+            "verification": "Live link check mandatory",
+            "path_template": "https://pranavrai207.github.io/client-pitches/clients/{folder_name}/"
+        }
+    }
+}

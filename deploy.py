@@ -43,7 +43,7 @@ def deploy(client_folder):
     ]
     
     if run_git(commands):
-        live_url = f"https://{GITHUB_USERNAME}.github.io/{REPO_NAME}/{client_folder}/"
+        live_url = f"https://{GITHUB_USERNAME}.github.io/{REPO_NAME}/clients/{client_folder}/"
         print("\n" + "="*50)
         print("🚀 DEPLOYMENT SUCCESSFUL!")
         print(f"Client: {client_folder}")
