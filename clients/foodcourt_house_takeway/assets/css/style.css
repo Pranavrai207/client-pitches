@@ -74,6 +74,13 @@ img {
 }
 
 /* Layouts */
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -82,8 +89,8 @@ img {
 }
 
 .section {
-  padding: 104px 0;
-  /* Near 100px standard */
+  padding-top: 104px;
+  padding-bottom: 104px;
 }
 
 .text-center {
@@ -116,6 +123,7 @@ header .container {
   font-size: 24px;
   font-weight: 700;
   letter-spacing: -0.5px;
+  white-space: nowrap;
 }
 
 .logo span {
@@ -150,6 +158,8 @@ header .container {
   font-weight: 500;
   transition: background-color 0.3s ease;
   border: 1px solid var(--accent);
+  text-align: center;
+  white-space: nowrap;
 }
 
 .btn:hover {
@@ -213,6 +223,7 @@ header .container {
 
 .split-layout>div {
   flex: 1;
+  max-width: 100%;
 }
 
 .split-layout.reverse {
@@ -227,6 +238,7 @@ header .container {
 
 .layout-3>div {
   flex: 1;
+  min-width: 0;
 }
 
 .card {
@@ -248,6 +260,7 @@ header .container {
 .rating-badge {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 16px;
   margin-top: 24px;
   font-size: 18px;
@@ -280,6 +293,8 @@ header .container {
   color: var(--card-bg);
   padding: 80px 40px;
   border-radius: 8px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .cta-box h2 {
@@ -320,11 +335,13 @@ footer {
   }
 
   .container {
-    padding: 0 20px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   .section {
-    padding: 64px 0;
+    padding-top: 64px;
+    padding-bottom: 64px;
   }
 
   .hero-bg {
@@ -335,18 +352,12 @@ footer {
     display: none;
   }
 
-  header .btn {
-    padding: 0 16px;
-    height: 40px;
-    font-size: 14px;
-    width: auto;
-  }
-
   .split-layout,
   .split-layout.reverse,
   .grid {
     flex-direction: column;
     gap: 32px;
+    width: 100%;
   }
 
   .hero-actions {
@@ -359,7 +370,7 @@ footer {
   }
 
   header .btn {
-    width: auto;
+    width: auto !important;
   }
 
   .cta-box {
@@ -385,7 +396,21 @@ footer {
     font-size: 1.6rem;
   }
 
+  .logo {
+    font-size: 18px;
+  }
+
+  header .btn {
+    padding: 0 12px;
+    height: 36px;
+    font-size: 13px;
+  }
+
   .cta-box {
     padding: 40px 16px;
+  }
+
+  .rating-badge {
+    gap: 8px;
   }
 }
