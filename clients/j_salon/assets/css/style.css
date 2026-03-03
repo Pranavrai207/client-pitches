@@ -1,0 +1,229 @@
+:root {
+    --emerald-deep: #043927;
+    --gold-rich: #D4AF37;
+    --gold-light: #F1D592;
+    --cream-soft: #FFFDD0;
+    --slate-dark: #1A1A1A;
+    --serif-header: 'Playfair Display', serif;
+    --sans-body: 'Inter', sans-serif;
+    --spacing-xs: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 32px;
+    --max-width: 1200px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--slate-dark);
+    color: var(--cream-soft);
+    font-family: var(--sans-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Navigation */
+nav {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    background: rgba(26, 26, 26, 0.98);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid var(--gold-rich);
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo {
+    font-family: var(--serif-header);
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--gold-rich);
+    letter-spacing: 2px;
+}
+
+/* Hero Section */
+.hero {
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(rgba(4, 57, 39, 0.7), rgba(0, 0, 0, 0.8)), url('../images/hero-1920.webp');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+}
+
+.hero-content {
+    margin: 0 auto;
+}
+
+.hero-content h1 {
+    font-family: var(--serif-header);
+    font-size: clamp(40px, 10vw, 72px);
+    color: var(--gold-rich);
+    margin-bottom: 24px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content p {
+    font-size: 20px;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    color: white;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 18px 40px;
+    background: var(--gold-rich);
+    color: var(--emerald-deep);
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 0;
+    transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn:hover {
+    background: var(--gold-light);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Sections */
+section {
+    padding: 100px 0;
+}
+
+.section-title {
+    font-family: var(--serif-header);
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 64px;
+    color: var(--gold-rich);
+}
+
+/* Grid System */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+@media (max-width: 1024px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.service-card {
+    background: #252525;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    transition: 0.4s;
+}
+
+.service-card:hover {
+    border-color: var(--gold-rich);
+    transform: scale(1.02);
+}
+
+.service-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.service-info {
+    padding: 24px;
+    text-align: center;
+}
+
+.service-info h3 {
+    font-family: var(--serif-header);
+    margin-bottom: 12px;
+    color: var(--gold-rich);
+    font-size: 24px;
+}
+
+/* About Section */
+.about-box {
+    display: flex;
+    gap: 80px;
+    align-items: center;
+}
+
+@media (max-width: 900px) {
+    .about-box {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+.about-img-wrap {
+    flex: 1;
+    position: relative;
+}
+
+.about-img-wrap::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: -20px;
+    bottom: -20px;
+    border: 2px solid var(--gold-rich);
+    z-index: -1;
+}
+
+.about-content {
+    flex: 1.2;
+}
+
+/* Review Section */
+.review-highlight {
+    background: var(--emerald-deep);
+    padding: 60px;
+    text-align: center;
+    border-radius: 4px;
+    margin-top: 40px;
+}
+
+/* Footer */
+footer {
+    padding: 60px 0;
+    background: #000;
+    text-align: center;
+    border-top: 1px solid var(--emerald-deep);
+}
+
+.footer-logo {
+    font-family: var(--serif-header);
+    font-size: 36px;
+    color: var(--gold-rich);
+    margin-bottom: 16px;
+}
