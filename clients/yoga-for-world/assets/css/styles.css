@@ -1,0 +1,308 @@
+/* 
+  Yoga For World - Premium Zen Aesthetic
+  Following design_standards.md: 8px spacing, 1200px container, Rule 10 Mobile Fix.
+*/
+
+:root {
+    /* Color Palette - Zen Minimalist */
+    --primary: #5b7c5b;
+    /* Sage Green */
+    --primary-light: #8ca68c;
+    --accent: #d4a373;
+    /* Warm Earth */
+    --bg-warm: #fdfaf5;
+    /* Soft Cream */
+    --bg-white: #ffffff;
+    --text-main: #1e293b;
+    /* Deep Charcoal */
+    --text-muted: #64748b;
+    --border: rgba(91, 124, 91, 0.1);
+
+    /* Spacing Scale (8px system) */
+    --space-1: 8px;
+    --space-2: 16px;
+    --space-3: 24px;
+    --space-4: 32px;
+    --space-5: 40px;
+    --space-6: 48px;
+    --space-8: 64px;
+    --space-10: 80px;
+    --space-12: 100px;
+
+    /* Layout */
+    --container-max: 1200px;
+    --nav-height: 90px;
+    --radius: 16px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    color: var(--text-main);
+    background-color: var(--bg-warm);
+    line-height: 1.7;
+}
+
+/* Typography */
+h1,
+h2,
+h3 {
+    font-family: 'Playfair Display', serif;
+    line-height: 1.1;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    margin-bottom: var(--space-3);
+}
+
+h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    text-align: center;
+    margin-bottom: var(--space-6);
+}
+
+h3 {
+    font-size: 1.75rem;
+    color: var(--primary);
+}
+
+p {
+    font-size: 1.125rem;
+    color: var(--text-muted);
+    margin-bottom: var(--space-3);
+}
+
+/* Layout Containers */
+.container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--space-4);
+}
+
+section {
+    padding: var(--space-12) 0;
+}
+
+/* Navbar */
+nav {
+    height: var(--nav-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(253, 250, 245, 0.9);
+    backdrop-filter: blur(12px);
+    z-index: 1000;
+    border-bottom: 1px solid var(--border);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--primary);
+    text-decoration: none;
+    font-family: 'Playfair Display', serif;
+}
+
+.nav-links {
+    display: none;
+    gap: var(--space-5);
+}
+
+@media (min-width: 1024px) {
+    .nav-links {
+        display: flex;
+    }
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--accent);
+}
+
+/* Buttons */
+.btn {
+    padding: 16px 32px;
+    border-radius: 100px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(91, 124, 91, 0.2);
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+}
+
+/* Hero Section */
+.hero {
+    padding-top: calc(var(--nav-height) + var(--space-10));
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-grid {
+    display: grid;
+    gap: var(--space-8);
+    align-items: center;
+}
+
+@media (min-width: 1024px) {
+    .hero-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.hero-image-container {
+    position: relative;
+}
+
+.hero-img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 40px;
+    box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.1);
+}
+
+/* Rule 10: Floating Accents & Mobile Fix */
+.accent-card {
+    position: absolute;
+    bottom: -32px;
+    right: -32px;
+    background: var(--accent);
+    color: white;
+    padding: var(--space-4);
+    border-radius: var(--radius);
+    max-width: 200px;
+    box-shadow: 0 20px 40px rgba(212, 163, 115, 0.3);
+    z-index: 2;
+}
+
+@media (max-width: 768px) {
+    .accent-card {
+        right: 8px;
+        /* Rule 10: Fix offset */
+        bottom: 8px;
+        padding: var(--space-2);
+        font-size: 0.85rem;
+    }
+}
+
+/* Services Grid */
+.grid {
+    display: grid;
+    gap: var(--space-4);
+}
+
+@media (min-width: 768px) {
+    .grid-2 {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 1024px) {
+    .grid-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.service-card {
+    background: var(--bg-white);
+    padding: var(--space-6);
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    transition: all 0.4s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent);
+    box-shadow: 0 30px 60px -12px rgba(91, 124, 91, 0.08);
+}
+
+/* Footer */
+footer {
+    background: #1e293b;
+    color: white;
+    padding: var(--space-10) 0 var(--space-4);
+}
+
+.footer-grid {
+    display: grid;
+    gap: var(--space-8);
+    margin-bottom: var(--space-8);
+}
+
+@media (min-width: 768px) {
+    .footer-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+footer h4 {
+    margin-bottom: var(--space-3);
+    color: var(--accent);
+}
+
+footer p,
+footer a {
+    color: #94a3b8;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 12px;
+}
+
+footer a:hover {
+    color: white;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: var(--space-4);
+    text-align: center;
+    font-size: 0.875rem;
+    opacity: 0.5;
+}
