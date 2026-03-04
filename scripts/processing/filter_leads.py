@@ -7,9 +7,14 @@ Run this AFTER scraper.py finishes:
     python filter_leads.py --input delhi_leads.xlsx --output delhi_leads_clean.xlsx
 """
 
-import argparse
+import os
+import sys
+# Add project root to sys.path
+root_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+if root_dir not in sys.path:
+    sys.path.append(root_dir)
 import pandas as pd
-import config
+from config import config
 
 def _is_platform_website(url: str) -> bool:
     """Check if the URL belongs to a known platform."""
@@ -124,7 +129,7 @@ def filter_excel(input_file: str, output_file: str) -> None:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Filter big brands from leads Excel")
-    parser.add_argument("--input",  default="delhi_leads.xlsx",       help="Input Excel file")
-    parser.add_argument("--output", default="delhi_leads_clean.xlsx", help="Output cleaned file")
+    parser.add_argument("--input",  default="data/delhi_leads.xlsx",       help="Input Excel file")
+    parser.add_argument("--output", default="data/delhi_leads_clean.xlsx", help="Output cleaned file")
     args = parser.parse_args()
     filter_excel(args.input, args.output)

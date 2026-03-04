@@ -40,7 +40,14 @@ def extract_data(html_content, folder_name):
     return data
 
 def main():
-    clients_dir = r"c:\Lead Generation\clients"
+    # Add project root to sys.path for 3-level pathing
+    root_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    if root_dir not in sys.path:
+        sys.path.append(root_dir)
+
+    # Paths adjusted for 10/10 Hybrid structure
+    # base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..')) # This line is no longer needed
+    clients_dir = os.path.join(root_dir, "clients") # Adjusted to use root_dir
     report_data = []
     
     if not os.path.exists(clients_dir):
@@ -67,7 +74,7 @@ def main():
     for row in report_data:
         ws.append([row[h] for h in headers])
         
-    output_file = r"c:\Lead Generation\client_websites_report.xlsx"
+    output_file = os.path.join(base_dir, "outputs", "client_websites_report.xlsx")
     wb.save(output_file)
     print(f"SUCCESS: Report saved to {output_file}")
 

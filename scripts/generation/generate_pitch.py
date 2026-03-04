@@ -12,7 +12,13 @@ TEMPLATES = {
 
 def generate_pitch(client_name):
     try:
-        df = pd.read_excel('delhi_leads_clean.xlsx')
+        # Path adjusted for new structure
+        # Add project root to sys.path
+        root_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+        if root_dir not in sys.path:
+            sys.path.append(root_dir)
+        excel_path = os.path.join(os.path.dirname(__file__), '..', 'data', 'delhi_leads_clean.xlsx')
+        df = pd.read_excel(excel_path)
         lead = df[df['Name'].str.contains(client_name, case=False, na=False)].iloc[0]
         
         # Create folder

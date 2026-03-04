@@ -21,6 +21,10 @@ def run_git(commands):
 
 def deploy(client_folder):
     """Adds, commits, and pushes a specific client folder."""
+    # Add project root to sys.path
+    root_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    if root_dir not in sys.path:
+        sys.path.append(root_dir)
     if not os.path.exists(os.path.join("clients", client_folder)):
         print(f"Error: Folder '{client_folder}' not found in clients directory.")
         return

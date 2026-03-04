@@ -36,7 +36,7 @@ MAX_RESULTS_PER_QUERY = 100
 MAX_RESULTS = MAX_RESULTS_PER_QUERY
 
 # Output file name
-OUTPUT_FILE = "delhi_leads.xlsx"
+OUTPUT_FILE = "data/delhi_leads.xlsx"
 
 # --- Browser Configuration ---
 HEADLESS = False           # Set True to run invisibly (less safe for anti-detection)
@@ -246,4 +246,4 @@ REQUIRE_PHONE_NUMBER = True
 
 # --- Logging ---
 LOG_LEVEL = "INFO"
-LOG_FILE = "scraper.log"
+LOG_FILE = "logs/scraper.log"

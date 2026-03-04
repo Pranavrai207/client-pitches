@@ -13,14 +13,13 @@
 import argparse
 import logging
 import random
+import os
 import sys
-import time
-from typing import Optional
-
-import pandas as pd
-from playwright.sync_api import Page, Playwright, sync_playwright, TimeoutError as PlaywrightTimeout
-
-import config
+# Add project root to sys.path
+root_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+if root_dir not in sys.path:
+    sys.path.append(root_dir)
+from config import config
 
 # ─────────────────────────────────────────────────────────────────────────────
 #  LOGGING SETUP

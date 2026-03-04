@@ -4,15 +4,17 @@ A **modular, production-ready** Python automation tool that scrapes Google Maps 
 
 ---
 
-## 📦 Project Files
-
-| File | Purpose |
+| Folder/File | Purpose |
 |------|---------|
-| `scraper.py` | Main automation script (all 6 modular functions) |
-| `config.py` | Central configuration — queries, delays, output settings |
+| `main.py` | **Central Orchestrator** (Run all commands from here) |
+| `scripts/` | Implementation logic (Scraper, Filter, Deploy, etc.) |
+| `config/` | Central configuration (`config.py`) |
+| `data/` | Lead databases (`.xlsx` files) |
+| `logs/` | System operation logs (`scraper.log`) |
+| `outputs/` | Generated reports and transient outputs |
+| `clients/` | **The Deal Hub** (Premium HTML/CSS pitches) |
+| `ai_memory/` | Design standards and pitch strategy documents |
 | `requirements.txt` | Python dependencies |
-| `delhi_leads.xlsx` | Output file (generated after run) |
-| `scraper.log` | Log file (generated after run) |
 
 ---
 
@@ -48,32 +50,37 @@ playwright install chromium
 
 ---
 
-## ▶️ Running the Scraper
-
-### Default Run (uses `config.py` settings)
+### Unified Pipeline (Recommended)
 ```powershell
-python scraper.py
+# Scrape + Filter + Organize (The 10/10 way)
+python main.py all
 ```
 
-### Custom Query via CLI
+### Individual Commands via Orchestrator
 ```powershell
-# Scrape restaurants, collect 40 results
-python scraper.py --query "restaurants in Delhi" --max 40
+# Scrape specific niche
+python main.py scrape --query "salons in Delhi" --max 40
 
-# Short form
-python scraper.py -q "gyms in Delhi" -m 30
+# Filter results
+python main.py filter
 
-# Custom output file
-python scraper.py -q "salons in Delhi" -m 35 -o "salon_leads.xlsx"
+# Generate pitch
+python main.py pitch --client "Bloom Salon"
+
+# Optimize assets
+python main.py optimize --client "bloom_salon"
+
+# Deploy to GitHub
+python main.py deploy --client "bloom_salon"
 ```
 
-### CLI Arguments
+### CLI Arguments (`main.py`)
 
-| Argument | Short | Default | Description |
-|----------|-------|---------|-------------|
-| `--query` | `-q` | From `config.py` | Search term for Google Maps |
-| `--max` | `-m` | `50` | Max results to collect |
-| `--output` | `-o` | `delhi_leads.xlsx` | Output Excel filename |
+| Argument | Short | Target | Description |
+|----------|-------|--------|-------------|
+| `--query` | `-q` | `scrape` | Search term for Google Maps |
+| `--max` | `-m` | `scrape` | Max results per query |
+| `--client` | `-c` | `pitch/deploy` | Client name or folder name |
 
 ---
 
@@ -118,6 +125,29 @@ Each row is one unique business with these columns:
 | 🔥 **High** | No website listed | Perfect target for web design / digital marketing |
 | 🟡 **Medium** | Rating ≥ 4.0 with website | Established business, open to extra services |
 | 🟢 **Low** | Website + rating < 4.0 | Already present online |
+
+---
+
+## 💎 Premium Pitch Generation Protocol (10/10 Quality)
+
+To maintain a premium standard for high-ticket clients, follow this manual-crafting workflow:
+
+### 1. Lead Selection
+Use `python filter_leads.py` to identify high-priority targets. Focus on businesses with high ratings but no digital presence.
+
+### 2. Bespoke Asset Creation
+- Create client folder: `clients/[business-slug]/assets/images/`.
+- Generate custom AI/Stock images tailored to the business's niche and vibe.
+- **Optimize**: Run `python optimize_assets.py "clients/[business-slug]/assets/images"` to ensure 10/10 loading speed (WebP).
+
+### 3. UI/UX Construction
+- Develop `index.html` and `styles.css` following `design_standards.md`.
+- Ensure unique typography pairings and premium color palettes for every client.
+- Implement LocalBusiness JSON-LD for SEO.
+
+### 4. Deployment & Audit
+- **Deploy**: Run `python deploy.py [business-slug]`.
+- **Verify**: Audit the mobile responsiveness and layout alignment on all devices.
 
 ---
 
