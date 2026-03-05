@@ -2,64 +2,121 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geeta's Salon | Premium Beauty Care</title>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
 
-<title>Geeta's Salon</title>
-
-<link rel="stylesheet" href="assets/css/style.css">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<header>
+    <header>
+        <div class="container header-wrapper">
+            <a href="#home" class="logo">Geeta's<span>.</span></a>
 
-<div class="container header-wrapper">
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="hamburger">
+                <span></span><span></span><span></span>
+            </label>
 
-<a href="index.html" class="logo">Geeta's<span>.</span></a>
+            <nav class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#services">Services</a>
+                <a href="#about">Our Story</a>
+                <a href="#reviews">Reviews</a>
+            </nav>
 
-<input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <a href="#services" class="btn desktop-btn">Book Now</a>
+        </div>
+    </header>
 
-<label for="menu-toggle" class="hamburger">
-<span></span>
-<span></span>
-<span></span>
-</label>
+    <section id="home">
+        <div class="container hero-content">
+            <h1>Ready for Your Transformation?</h1>
+            <p>Discover premium beauty care and relaxation at Geeta's Salon in Pilanji. Professional styling tailored just for you.</p>
+            <a href="#services" class="btn">View Services</a>
+        </div>
+    </section>
 
-<nav class="nav-links">
+    <section id="services">
+        <div class="section-header">
+            <div class="container">
+                <h2>Our Services</h2>
+                <p>Premium treatments tailored to your unique style.</p>
+            </div>
+        </div>
+        <div class="content-wrapper">
+            <div class="container grid">
+                <div class="card">
+                    <h3>Hair Styling & Cuts</h3>
+                    <p>From classic trims to complete restyles, our expert stylists will help you find the perfect look.</p>
+                    <span class="price">Starting at ₹500</span>
+                </div>
+                <div class="card">
+                    <h3>Color & Highlights</h3>
+                    <p>Balayage, full color, or subtle highlights using premium, hair-safe products.</p>
+                    <span class="price">Starting at ₹1500</span>
+                </div>
+                <div class="card">
+                    <h3>Spa Manicure & Pedicure</h3>
+                    <p>Relaxing hand and foot treatments to keep your nails healthy and beautiful.</p>
+                    <span class="price">Starting at ₹800</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<a href="index.html">Home</a>
-<a href="services.html">Services</a>
-<a href="about.html">Our Story</a>
-<a href="reviews.html">Reviews</a>
+    <section id="about">
+        <div class="section-header">
+            <div class="container">
+                <h2>Our Story</h2>
+                <p>Get to know the passion behind the salon.</p>
+            </div>
+        </div>
+        <div class="content-wrapper">
+            <div class="container" style="max-width: 800px; text-align: center;">
+                <h3 style="font-family: 'Playfair Display', serif; font-size: 28px; margin-bottom: 20px;">Welcome to Geeta's</h3>
+                <p style="margin-bottom: 15px;">Founded with a vision to bring high-end beauty care to the heart of Pilanji, Geeta's Salon has grown from a small neighborhood spot into a premier beauty destination.</p>
+                <p>Our philosophy is simple: everyone deserves to look and feel their absolute best. We continuously train our staff on the latest trends and techniques to ensure you walk out feeling confident and refreshed.</p>
+            </div>
+        </div>
+    </section>
 
-</nav>
+    <section id="reviews">
+        <div class="section-header">
+            <div class="container">
+                <h2>Client Reviews</h2>
+                <p>See what our wonderful clients have to say.</p>
+            </div>
+        </div>
+        <div class="content-wrapper">
+            <div class="container grid">
+                <div class="card">
+                    <p>"Absolutely love my new haircut! The staff here is so friendly and they really listen to what you want. Highly recommend."</p>
+                    <span class="price">— Sarah M.</span>
+                </div>
+                <div class="card">
+                    <p>"Best manicure I've ever had. The attention to detail is unmatched, and the salon environment is incredibly relaxing."</p>
+                    <span class="price">— Priya K.</span>
+                </div>
+                <div class="card">
+                    <p>"I came in for full highlights and was a bit nervous, but they did an amazing job. My hair looks natural and feels so healthy."</p>
+                    <span class="price">— Elena R.</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<a href="#" class="btn desktop-btn">Book Now</a>
-
-</div>
-
-</header>
-
-<section id="hero">
-
-<div class="container hero-content">
-
-<h1>Ready for Your Transformation?</h1>
-
-<p>Discover premium beauty care at Geeta's Salon in Pilanji.</p>
-
-<a href="services.html" class="btn">View Services</a>
-
-</div>
-
-</section>
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Geeta's Salon. All Rights Reserved. | Pilanji, Delhi</p>
+        </div>
+    </footer>
 
 </body>
 </html>
