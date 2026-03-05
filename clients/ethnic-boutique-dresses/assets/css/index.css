@@ -521,10 +521,14 @@ footer {
     font-size: 0.85rem;
 }
 
-/* Responsive */
+/* Responsive Refresh */
 @media (max-width: 1024px) {
     h1 {
         font-size: 3.5rem;
+    }
+
+    .about-wrapper {
+        gap: var(--space-xl);
     }
 }
 
@@ -536,16 +540,26 @@ footer {
     .hero-bg {
         width: 100%;
         position: absolute;
-        opacity: 0.3;
+        opacity: 0.25;
+        /* Slightly more subtle */
     }
 
     .hero-text {
         max-width: 100%;
         text-align: center;
+        padding-top: var(--space-xxl);
     }
 
     .hero-actions {
         justify-content: center;
+        flex-wrap: wrap;
+        /* Prevent button cutoff */
+    }
+
+    #hero {
+        padding: var(--space-huge) 0;
+        height: auto;
+        min-height: 80vh;
     }
 
     .about-wrapper,
@@ -556,18 +570,84 @@ footer {
         grid-template-columns: 1fr;
         gap: var(--space-xl);
     }
+}
 
-    .image-box,
+/* Specific Mobile Fixes (Phones) */
+@media (max-width: 768px) {
+    :root {
+        --space-huge: 64px;
+        /* Tighten up vertical space */
+    }
+
+    .container {
+        padding: 0 var(--space-s);
+        /* 16px instead of 24px */
+    }
+
+    h1 {
+        font-size: 2.8rem;
+    }
+
+    .section-header h2 {
+        font-size: 2.2rem;
+    }
+
+    .about-text h2 {
+        font-size: 2.2rem;
+    }
+
+    .contact-info h2 {
+        font-size: 2.2rem;
+    }
+
+    .image-box {
+        height: 350px;
+        /* Better ratio for mobile */
+    }
+
     .about-image {
         height: 400px;
     }
 
-    .hero-image {
-        display: none;
+    .stats {
+        flex-direction: column;
+        gap: var(--space-m);
+        align-items: center;
+        text-align: center;
     }
 
-    #hero {
-        padding: 4rem 0;
-        height: auto;
+    .cta-button {
+        display: none;
+        /* Hide top CTA on tiny screens if it crowds logo */
+    }
+
+    header.scrolled .cta-button {
+        display: inline-block;
+        /* Show it back once scrolled if desired, or keep hidden */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    #hero p {
+        font-size: 1rem;
+    }
+
+    .btn {
+        width: 100%;
+        /* Full width buttons for easier tapping */
+        text-align: center;
+        padding: 14px 20px;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+    }
+
+    .stat span {
+        font-size: 2rem;
     }
 }
