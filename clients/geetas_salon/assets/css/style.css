@@ -1,134 +1,226 @@
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
+/* --- RESET & BASICS --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-font-family: 'Inter', sans-serif;
-color:#333;
-line-height:1.6;
+html {
+    scroll-behavior: smooth; /* Enables smooth scrolling between sections */
 }
 
-.container{
-width:90%;
-max-width:1200px;
-margin:auto;
+body {
+    font-family: 'Inter', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #fff;
 }
 
-/* HEADER */
-
-header{
-background:white;
-border-bottom:1px solid #eee;
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
 }
 
-.header-wrapper{
-display:flex;
-align-items:center;
-justify-content:space-between;
-padding:18px 0;
+/* --- HEADER --- */
+header {
+    background: white;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-.logo{
-font-family:'Playfair Display', serif;
-font-size:22px;
-text-decoration:none;
-color:#222;
+.header-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 0;
+    height: 80px;
 }
 
-.logo span{
-color:#d89a9a;
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+    text-decoration: none;
+    color: #222;
 }
 
-.nav-links{
-display:flex;
-gap:30px;
+.logo span {
+    color: #d89a9a;
 }
 
-.nav-links a{
-text-decoration:none;
-color:#333;
-font-weight:500;
+.nav-links {
+    display: flex;
+    gap: 30px;
+    align-items: center;
 }
 
-.btn{
-background:#d89a9a;
-color:white;
-padding:10px 18px;
-border-radius:6px;
-text-decoration:none;
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
 }
 
-/* HERO */
-
-#hero{
-height:90vh;
-background:url("../images/salon.jpg") center/cover no-repeat;
-display:flex;
-align-items:center;
+.nav-links a:hover {
+    color: #d89a9a;
 }
 
-.hero-content h1{
-font-family:'Playfair Display', serif;
-font-size:48px;
-margin-bottom:20px;
+.btn {
+    background: #d89a9a;
+    color: white;
+    padding: 10px 22px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.3s ease;
+    display: inline-block;
 }
 
-.hero-content p{
-margin-bottom:20px;
+.btn:hover {
+    background: #c07b7b;
 }
 
-/* HAMBURGER */
-
-.menu-toggle{
-display:none;
+/* --- HAMBURGER MENU --- */
+.menu-toggle {
+    display: none;
 }
 
-.hamburger{
-display:none;
-flex-direction:column;
-gap:5px;
-cursor:pointer;
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
 }
 
-.hamburger span{
-width:25px;
-height:3px;
-background:#333;
-display:block;
+.hamburger span {
+    width: 28px;
+    height: 3px;
+    background: #333;
+    display: block;
+    border-radius: 2px;
 }
 
-/* MOBILE */
-
-@media (max-width:768px){
-
-.nav-links{
-position:absolute;
-top:70px;
-right:0;
-background:white;
-flex-direction:column;
-width:220px;
-padding:20px;
-display:none;
-box-shadow:0 10px 30px rgba(0,0,0,0.1);
+/* --- SECTION STYLING --- */
+/* This ensures the sticky header doesn't cover the section titles when scrolling */
+section {
+    scroll-margin-top: 80px; 
 }
 
-.menu-toggle:checked + .hamburger + .nav-links{
-display:flex;
+/* --- HERO SECTION --- */
+#home {
+    height: 90vh;
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                url("../images/salon.jpg") center/cover no-repeat;
+    display: flex;
+    align-items: center;
 }
 
-.hamburger{
-display:flex;
+.hero-content {
+    color: white;
+    max-width: 600px;
 }
 
-.desktop-btn{
-display:none;
+.hero-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 52px;
+    margin-bottom: 20px;
+    line-height: 1.2;
 }
 
-.hero-content h1{
-font-size:32px;
+.hero-content p {
+    margin-bottom: 30px;
+    font-size: 18px;
+    opacity: 0.9;
 }
 
+/* --- CONTENT SECTIONS (Services, About, Reviews) --- */
+.section-header {
+    background: #fdf5f5;
+    padding: 60px 0;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
+.section-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.content-wrapper {
+    padding: 60px 0;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border: 1px solid #f5f5f5;
+}
+
+.card h3 {
+    font-family: 'Playfair Display', serif;
+    color: #d89a9a;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.price {
+    font-weight: 600;
+    color: #333;
+    display: block;
+    margin-top: 15px;
+}
+
+/* --- FOOTER --- */
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 40px;
+}
+
+/* --- RESPONSIVE DESIGN (MOBILE) --- */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .desktop-btn {
+        display: none;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 80px;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        width: 100%;
+        padding: 30px;
+        align-items: center;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        display: none; 
+        border-top: 1px solid #eee;
+    }
+    
+    .menu-toggle:checked ~ .nav-links {
+        display: flex;
+    }
+
+    .hero-content h1 {
+        font-size: 36px;
+    }
 }
