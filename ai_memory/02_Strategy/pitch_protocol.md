@@ -41,6 +41,7 @@ All projects must follow this structure:
 No alternative structure allowed.
 
 ### Deployment & Presentation
+- **MANDATORY PRE-DEPLOY SYNC**: Always run `git pull origin main` BEFORE deploying to prevent push rejections from diverged branches.
 - Use `deploy.py [folder_name]` for deployment.
 - **MANDATORY URL STRUCTURE**: All live links MUST follow this exact format:
   `https://pranavrai207.github.io/client-pitches/clients/[folder_name]/`
