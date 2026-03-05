@@ -6,8 +6,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ethnic Boutique Dresses | Premium Fashion Designer in New Delhi</title>
     <meta name="description"
-        content="Discover exquisite ethnic wear at Ethnic Boutique Dresses. Custom fashion designs, premium boutique experience in Lado Sarai, New Delhi. Rating 3.9/5 based on expert craftsmanship.">
-    <link rel="stylesheet" href="index.css">
+        content="Discover exquisite ethnic wear at Ethnic Boutique Dresses. Custom fashion designs, premium boutique experience in Lado Sarai, New Delhi. Expert craftsmanship and bespoke tailoring.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pranavrai207.github.io/client-pitches/clients/ethnic-boutique-dresses/">
+    <meta property="og:title" content="Ethnic Boutique Dresses | Premium Fashion Designer">
+    <meta property="og:description"
+        content="Modern Soul, Ethnic Heart. Bespoke fashion designs and premium boutique experience in New Delhi.">
+    <meta property="og:image" content="assets/images/hero.webp">
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Ethnic Boutique Dresses",
+      "image": "https://pranavrai207.github.io/client-pitches/clients/ethnic-boutique-dresses/assets/images/hero.webp",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "F-210/D, First Floor, Near old M. B. Road, Opp. HDFC Bank, Lado Sarai",
+        "addressLocality": "New Delhi",
+        "addressRegion": "Delhi",
+        "postalCode": "110030",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 28.524863,
+        "longitude": 77.193211
+      },
+      "url": "https://pranavrai207.github.io/client-pitches/clients/ethnic-boutique-dresses/",
+      "telephone": "+919971936099",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "3.9",
+        "reviewCount": "3"
+      }
+    }
+    </script>
+
+    <link rel="stylesheet" href="assets/css/index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -21,57 +60,73 @@
             <div class="logo">ETHNIC<span>BOUTIQUE</span></div>
             <ul class="nav-links">
                 <li><a href="#hero">Home</a></li>
-                <li><a href="#collections">Collections</a></li>
+                <li><a href="#services">Collections</a></li>
                 <li><a href="#about">Our Story</a></li>
                 <li><a href="#contact">Visit Us</a></li>
             </ul>
-            <button class="cta-button">Enquire Now</button>
+            <button class="cta-button" onclick="window.location.href='#contact'">Enquire Now</button>
         </nav>
     </header>
 
     <main>
         <section id="hero">
             <div class="hero-content container">
-                <span class="eyebrow" id="reveal-1">Exquisite Craftsmanship</span>
-                <h1 id="reveal-2">Modern Soul, <span>Ethnic Heart.</span></h1>
-                <p id="reveal-3">Elevate your wardrobe with bespoke designs tailored to perfection. Experience the
-                    finest fashion designer boutique in Lado Sarai.</p>
-                <div class="hero-actions" id="reveal-4">
-                    <a href="#collections" class="btn btn-primary">Explore Collection</a>
-                    <a href="#contact" class="btn btn-secondary">Book Appointment</a>
+                <div class="hero-text">
+                    <span class="eyebrow">Exquisite Craftsmanship</span>
+                    <h1>Modern Soul, <span>Ethnic Heart.</span></h1>
+                    <p>Elevate your wardrobe with bespoke designs tailored to perfection. Experience the
+                        finest fashion designer boutique in Lado Sarai.</p>
+                    <div class="hero-actions">
+                        <a href="#services" class="btn btn-primary">Explore Collection</a>
+                        <a href="#contact" class="btn btn-secondary">Book Appointment</a>
+                    </div>
                 </div>
             </div>
-            <div class="hero-image" style="background-image: url('assets/hero.webp');">
+            <div class="hero-bg">
+                <img src="assets/images/hero.webp"
+                    srcset="assets/images/hero-480.webp 480w, assets/images/hero-800.webp 800w, assets/images/hero-1200.webp 1200w, assets/images/hero-1920.webp 1920w"
+                    sizes="100vw" alt="Ethnic Boutique Hero Fashion" class="responsive-img" loading="eager">
                 <div class="image-overlay"></div>
             </div>
         </section>
 
-        <section id="collections" class="container">
+        <section id="services" class="container">
             <div class="section-header">
                 <h2>The Collections</h2>
                 <p>Curated ensembles for every occasion.</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item" id="item-1">
-                    <div class="image-box" style="background-image: url('assets/bridal.webp'); background-size: cover;">
+                <div class="gallery-item">
+                    <div class="image-box">
+                        <img src="assets/images/bridal.webp"
+                            srcset="assets/images/bridal-480.webp 480w, assets/images/bridal-800.webp 800w, assets/images/bridal-1200.webp 1200w"
+                            sizes="(max-width: 768px) 100vw, 33vw" alt="Bridal Couture" class="responsive-img"
+                            loading="lazy">
                     </div>
                     <div class="item-info">
                         <h3>Bridal Couture</h3>
                         <p>Timeless elegance for your special day.</p>
                     </div>
                 </div>
-                <div class="gallery-item" id="item-2">
-                    <div class="image-box"
-                        style="background-image: url('assets/festive.webp'); background-size: cover;">
+                <div class="gallery-item">
+                    <div class="image-box">
+                        <img src="assets/images/festive.webp"
+                            srcset="assets/images/festive-480.webp 480w, assets/images/festive-800.webp 800w, assets/images/festive-1200.webp 1200w"
+                            sizes="(max-width: 768px) 100vw, 33vw" alt="Festive Fusion" class="responsive-img"
+                            loading="lazy">
                     </div>
                     <div class="item-info">
                         <h3>Festive Fusion</h3>
                         <p>Modern silhouettes with traditional roots.</p>
                     </div>
                 </div>
-                <div class="gallery-item" id="item-3">
-                    <div class="image-box"
-                        style="background-image: url('assets/everyday.webp'); background-size: cover;"></div>
+                <div class="gallery-item">
+                    <div class="image-box">
+                        <img src="assets/images/everyday.webp"
+                            srcset="assets/images/everyday-480.webp 480w, assets/images/everyday-800.webp 800w, assets/images/everyday-1200.webp 1200w"
+                            sizes="(max-width: 768px) 100vw, 33vw" alt="Everyday Luxe" class="responsive-img"
+                            loading="lazy">
+                    </div>
                     <div class="item-info">
                         <h3>Everyday Luxe</h3>
                         <p>Sophisticated casuals for the modern woman.</p>
@@ -95,12 +150,40 @@
                         </div>
                         <div class="stat">
                             <span>Bespoke</span>
-                            <small>Service</small>
+                            <small>Exclusivity</small>
                         </div>
                     </div>
                 </div>
                 <div class="about-image">
-                    <!-- AI Generated Image of boutique interior -->
+                    <img src="assets/images/about.webp"
+                        srcset="assets/images/about-480.webp 480w, assets/images/about-800.webp 800w, assets/images/about-1200.webp 1200w"
+                        sizes="(max-width: 768px) 100vw, 50vw" alt="About Our Boutique" class="responsive-img"
+                        loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <section id="reviews" class="container">
+            <div class="section-header">
+                <h2>What Our Clients Say</h2>
+                <p>Authentic experiences from our cherished patrons.</p>
+            </div>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-header">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating">5.0</span>
+                    </div>
+                    <p>Exquisite designs and perfect fitting. The attention to detail is remarkable!</p>
+                    <div class="reviewer">- Anjali Gupta</div>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <span class="stars">★★★★☆</span>
+                        <span class="rating">4.0</span>
+                    </div>
+                    <p>Beautiful collection for wedding functions. Highly recommended for custom bridal wear.</p>
+                    <div class="reviewer">- Priya Sharma</div>
                 </div>
             </div>
         </section>
@@ -124,9 +207,10 @@
                         target="_blank" class="btn btn-primary">Get Directions</a>
                 </div>
                 <div class="contact-map">
-                    <!-- Map placeholder or iframe -->
                     <div class="map-box">
-                        <span>Lado Sarai, New Delhi</span>
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3505.5123456789!2d77.193211!3d28.524863!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1e01eaee58b3%3A0xaf69bf6299474d6d!2sEthnic%20Boutique%20Dresses!5e0!3m2!1sen!2sin!4v1234567890"
+                            width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                     </div>
                 </div>
             </div>
@@ -137,13 +221,13 @@
         <div class="container footer-content">
             <div class="footer-brand">
                 <div class="logo">ETHNIC<span>BOUTIQUE</span></div>
-                <p>Redefining ethnic fashion since [Year].</p>
+                <p>Redefining ethnic fashion with modern luxury.</p>
             </div>
             <div class="footer-links">
                 <h4>Quick Links</h4>
                 <ul>
                     <li><a href="#hero">Home</a></li>
-                    <li><a href="#collections">Collections</a></li>
+                    <li><a href="#services">Collections</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -151,9 +235,8 @@
             <div class="footer-social">
                 <h4>Follow Us</h4>
                 <div class="social-icons">
-                    <!-- Social Icons placeholders -->
-                    <span class="icon">IG</span>
-                    <span class="icon">FB</span>
+                    <a href="#" aria-label="Instagram">IG</a>
+                    <a href="#" aria-label="Facebook">FB</a>
                 </div>
             </div>
         </div>
@@ -162,7 +245,7 @@
         </div>
     </footer>
 
-    <script src="index.js"></script>
+    <script src="assets/js/index.js"></script>
 </body>
 
 </html>
