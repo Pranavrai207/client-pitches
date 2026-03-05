@@ -4,160 +4,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Geeta's Salon | Premium Luxury Beauty Salon in Pilanji, New Delhi</title>
+    <title>Geeta's Salon - Premium Beauty Parlour in Pilanji, New Delhi</title>
     <meta name="description"
-        content="Experience high-end luxury beauty treatments at Geeta's Salon. Expert bridal makeup, hair styling, and skincare in Pilanji, New Delhi.">
+        content="Experience luxurious and personalized beauty care at Geeta's Salon in Pilanji, New Delhi. Rated 4.9 stars for our exceptional services.">
+    <meta property="og:title" content="Geeta's Salon - Premium Beauty Parlour">
+    <meta property="og:description"
+        content="Experience luxurious and personalized beauty care at Geeta's Salon. Rated 4.9 stars by our wonderful clients.">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
         rel="stylesheet">
 
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
     <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- JSON-LD LocalBusiness Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BeautySalon",
+      "name": "Geeta's Salon",
+      "image": "/assets/images/hero-1200.webp",
+      "@id": "https://www.google.com/maps/place/Geeta's+Salon/@28.5730104,77.2089869,15z/data=!4m11!1m3!2m2!1sbeauty+salons+in+Delhi!6e1!3m6!1s0x390ce3d34c9efd4b:0x4a76af84ad980ad8!8m2!3d28.5733871!4d77.2199632!15sChZiZWF1dHkgc2Fsb25zIGluIERlbGhpWhgiFmJlYXV0eSBzYWxvbnMgaW4gZGVsaGmSAQxiZWF1dHlfc2Fsb26aASRDaGREU1VoTk1HOW5TMFZKUTBGblNVTjJkSEZQTldoQlJSQULgAQD6AQQIABAn!16s%2Fg%2F11gzp9b7gg?entry=ttu&g_ep=EgoyMDI2MDIyNS4wIKXMDSoASAFQAw%3D%3D",
+      "url": "",
+      "telephone": "098114 20116",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Pilanji",
+        "addressLocality": "New Delhi",
+        "addressRegion": "Delhi",
+        "postalCode": "110003",
+        "addressCountry": "IN"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "6"
+      }
+    }
+    </script>
 </head>
 
 <body>
 
     <header>
-        <div class="container nav">
-            <a href="index.html" class="logo">GEETA'S<span>.</span></a>
+        <nav class="container">
+            <div class="logo">Geeta's<span>.</span></div>
             <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="about.html">Our Story</a>
-                <a href="services.html">Services</a>
-                <a href="contact.html">Contact</a>
+                <a href="#about">Our Story</a>
+                <a href="#services">Services</a>
+                <a href="#reviews">Reviews</a>
             </div>
-            <a href="contact.html#book" class="btn">Book Now</a>
-        </div>
+            <a href="#cta" class="btn">Book Appointment</a>
+        </nav>
     </header>
 
     <main>
-        <!-- Hero Section -->
-        <section id="hero" style="background-image: url('assets/images/hero.png');">
+        <section id="hero">
+            <div class="hero-bg"></div>
             <div class="container hero-content">
-                <h1>Ready for Your <br><span class="text-gold">Transformation?</span></h1>
-                <p>Discover your premium look today at Geeta's Salon. <br>Exquisite beauty care tailored for the modern
-                    woman.</p>
+                <h1>Ready for Your Transformation?</h1>
+                <p>Visit us at Pilanji, New Delhi. Discover your premium look today. <br>
+                    Rated 4.9 stars by our wonderful clients.</p>
                 <div class="hero-actions">
-                    <a href="services.html" class="btn">Our Services</a>
-                    <a href="contact.html" class="btn btn-outline">Visit Us</a>
+                    <a href="#services" class="btn">View Services</a>
+                    <a href="#about" class="btn btn-outline">Discover More</a>
                 </div>
             </div>
         </section>
 
-        <!-- Brief About/Intro -->
-        <section class="section">
-            <div class="container text-center">
-                <h2 class="serif">Experience Excellence</h2>
-                <div class="gold-divider centered"></div>
-                <p style="max-width: 700px; margin: 0 auto; margin-bottom: 3rem;">
-                    At Geeta's Salon, we blend traditional artistry with modern luxury. Located in the heart of Pilanji,
-                    New Delhi, our salon is a sanctuary dedicated to your beauty and wellness.
-                </p>
-
-                <div class="grid">
-                    <div class="card">
-                        <i class="fa-solid fa-gem icon"></i>
-                        <h3>Premium Quality</h3>
-                        <p>We use only the finest international products to ensure long-lasting, radiant results for
-                            every client.</p>
-                    </div>
-                    <div class="card">
-                        <i class="fa-solid fa-crown icon"></i>
-                        <h3>Expert Stylists</h3>
-                        <p>Our team of highly trained professionals brings years of experience in bridal, hair, and
-                            skincare.</p>
-                    </div>
-                    <div class="card">
-                        <i class="fa-solid fa-heart icon"></i>
-                        <h3>Personalized Care</h3>
-                        <p>Every treatment is customized to your unique features and preferences for a look that's truly
-                            yours.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Featured Services Preview -->
-        <section class="section bg-dark">
+        <section id="about" class="section">
             <div class="container">
-                <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3rem;">
-                    <div>
-                        <h2 class="text-light">Our Specialties</h2>
-                        <div class="gold-divider"></div>
+                <div class="split-layout">
+                    <div class="content-block">
+                        <h2>Your Beauty, Reimagined.</h2>
+                        <p>At Geeta's Salon, we believe beauty is completely personal. Located in Pilanji, New Delhi,
+                            our premium parlour blends artistry with luxury to bring out your natural glow.</p>
+                        <p>From revitalizing skin therapies to precision styling, our expert beauticians ensure you
+                            leave feeling confident and completely renewed.</p>
                     </div>
-                    <a href="services.html" class="text-gold"
-                        style="margin-bottom: 1.5rem; border-bottom: 1px solid var(--color-gold);">View All Services
-                        →</a>
+                    <div class="image-block">
+                        <img src="assets/images/hero.png" alt="Professional beauty salon interior" loading="lazy">
+                    </div>
                 </div>
+            </div>
+        </section>
 
-                <div class="grid">
-                    <div class="card" style="padding: 0; overflow: hidden;">
-                        <img src="assets/images/makeup.png" alt="Bridal Makeup"
-                            style="height: 250px; width: 100%; object-fit: cover;">
-                        <div style="padding: 2rem;">
-                            <h3>Bridal Artistry</h3>
-                            <p>Stunning, high-definition makeup for your most special day.</p>
+        <section id="services" class="section bg-light">
+            <div class="container text-center">
+                <h2>Our Premium Services.</h2>
+                <p class="subtitle">Curated beauty treatments tailored for elegance and perfection.</p>
+                <div class="grid layout-3 mt-4">
+                    <div class="card">
+                        <img src="assets/images/makeup.png" alt="Bridal & Event Makeup" loading="lazy">
+                        <h3>Bridal & Event Styling</h3>
+                        <p>Flawless, high-end makeup artistry for weddings and special occasions, ensuring you shine
+                            brighter than ever.</p>
+                    </div>
+                    <div class="card">
+                        <img src="assets/images/hair.png" alt="Hair Care Therapeutics" loading="lazy">
+                        <h3>Luxury Hair Care</h3>
+                        <p>From precision cuts to revitalizing spa treatments, transform your hair with premium salon
+                            products.</p>
+                    </div>
+                    <div class="card">
+                        <img src="assets/images/makeup.png" alt="Advanced Skincare" loading="lazy">
+                        <h3>Advanced Skincare</h3>
+                        <p>Rejuvenating facials and dermal therapies designed to restore your natural, radiant
+                            complexion.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="reviews" class="section">
+            <div class="container">
+                <div class="split-layout reverse">
+                    <div class="content-block">
+                        <h2>Beloved by Our Clients.</h2>
+                        <p>Join the women in Delhi who trust Geeta's for an impeccable, high-end beauty experience.</p>
+                        <div class="rating-badge">
+                            <span class="score">4.9</span>
+                            <div class="stars">★★★★★</div>
+                            <span class="count">Based on 6 exceptional reviews</span>
                         </div>
                     </div>
-                    <div class="card" style="padding: 0; overflow: hidden;">
-                        <img src="assets/images/hair.png" alt="Hair Spa"
-                            style="height: 250px; width: 100%; object-fit: cover;">
-                        <div style="padding: 2rem;">
-                            <h3>Luxury Hair Care</h3>
-                            <p>Revitalize your hair with our advanced spa and styling treatments.</p>
+                    <div class="image-block review-cards">
+                        <div class="review-box">
+                            <p>"Geeta's is an absolute gem in Pilanji. The staff is incredibly professional, the
+                                ambiance is so relaxing, and my hair has never looked better. Highly recommended!"</p>
+                            <span class="reviewer">- Verified Client</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- CTA Section -->
-        <section class="section" style="background-color: var(--color-white);">
-            <div class="container text-center">
-                <h2 class="serif">Discover Your Premium Look</h2>
-                <p class="mt-2">Visit us at Pilanji, New Delhi. We are ready to transform your look.</p>
-                <div style="margin-top: 2rem;">
-                    <a href="tel:09811420116" class="btn">Call 098114 20116</a>
+        <section id="cta" class="section">
+            <div class="container">
+                <div class="text-center cta-box">
+                    <h2>Ready for Your Transformation?</h2>
+                    <p>Visit us at Pilanji, New Delhi. Discover your premium look today.</p>
+
+                    <!-- Embedded Google Map -->
+                    <div
+                        style="margin: 2rem 0; border-radius: 8px; overflow: hidden; height: 300px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m12!1m3!1d3502.5029!2d77.2173!3d28.5733!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce3d34c9efd4b%3A0x4a76af84ad980ad8!2sGeeta's+Salon!5e0!3m2!1sen!2sin!4v1709664000000!5m2!1sen!2sin"
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+
+                    <p class="phone-text">Call to book ahead: <strong>098114 20116</strong></p>
+                    <a href="tel:09811420116" class="btn btn-large">Call to Book</a>
                 </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <div class="container footer-content">
-            <div class="footer-col">
-                <h4 class="logo">GEETA'S<span>.</span></h4>
-                <p>Premium beauty parlour in Pilanji, New Delhi. Dedicated to excellence in bridal, hair, and skincare.
-                </p>
-                <div style="margin-top: 1rem; color: var(--color-gold);">
-                    <i class="fa-brands fa-instagram" style="margin-right: 1rem; font-size: 1.5rem;"></i>
-                    <i class="fa-brands fa-facebook" style="font-size: 1.5rem;"></i>
-                </div>
-            </div>
-            <div class="footer-col">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">Our Story</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Visit Us</h4>
-                <p><i class="fa-solid fa-location-dot text-gold"></i> Pilanji, New Delhi, Delhi 110003</p>
-                <p><i class="fa-solid fa-phone text-gold"></i> 098114 20116</p>
-                <p><i class="fa-solid fa-star text-gold"></i> 4.9 Rating</p>
-            </div>
-        </div>
-        <div class="copyright">
-            &copy; 2026 Geeta's Salon. All rights reserved. Crafted for Excellence.
+        <div class="container text-center">
+            <p>Crafted with Precision.</p>
         </div>
     </footer>
 
