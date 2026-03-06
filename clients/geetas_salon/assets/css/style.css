@@ -90,24 +90,28 @@ header {
 .btn {
     background: var(--accent);
     color: var(--white);
-    padding: 10px 22px;
-    border-radius: 6px;
+    padding: 12px 28px;
+    border-radius: 8px;
     text-decoration: none;
-    font-weight: 500;
-    transition: background 0.3s ease;
+    font-weight: 600;
+    transition: all 0.3s ease;
     display: inline-block;
     border: none;
     cursor: pointer;
+    box-shadow: 0 4px 10px rgba(216, 154, 154, 0.3);
 }
 
 .btn:hover {
     background: var(--accent-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(216, 154, 154, 0.4);
 }
 
 .btn-outline {
-    background: transparent;
-    border: 1px solid var(--accent);
-    color: var(--accent);
+    background: rgba(255, 255, 255, 0.4);
+    border: 2px solid var(--accent);
+    color: var(--chocolate);
+    backdrop-filter: blur(4px);
 }
 
 .btn-outline:hover {
