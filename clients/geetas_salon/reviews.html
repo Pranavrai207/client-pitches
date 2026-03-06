@@ -32,7 +32,7 @@
                 <a href="about.html">Our Story</a>
                 <a href="reviews.html">Reviews</a>
             </nav>
-            <a href="index.html#book" class="btn">Book Now</a>
+            <a href="tel:+919811420116" class="btn">Book Now</a>
         </div>
     </header>
 
@@ -50,19 +50,163 @@
             </div>
         </section>
 
+        <!-- Write a Review -->
+        <section class="section bg-light" id="write-review">
+            <div class="container text-center">
+                <h2>Share Your <span style="color: var(--accent);">Experience</span></h2>
+                <p>We value your feedback. Let us know how we did!</p>
+
+                <div class="review-form mt-4">
+                    <form id="reviewForm">
+                        <div class="form-group">
+                            <label for="reviewerName">Your Name</label>
+                            <input type="text" id="reviewerName" class="form-control" placeholder="Enter your name"
+                                required>
+                        </div>
+                        <div class="form-group" style="margin-bottom: 30px;">
+                            <label style="display: block; margin-bottom: 15px; font-weight: 500;">Select Your
+                                Rating</label>
+                            <div class="rating-selector" id="ratingSelector"
+                                style="display: flex; flex-direction: column; gap: 10px;">
+                                <div class="rating-row active" data-value="5"
+                                    style="display: flex; align-items: center; padding: 12px 20px; border: 1px solid #eee; border-radius: 8px; cursor: pointer; transition: all 0.3s ease;">
+                                    <span class="stars"
+                                        style="color: var(--accent); font-size: 1.2rem; margin-right: 15px;">★★★★★</span>
+                                    <span class="label" style="font-weight: 500;">Exceptional Transformation</span>
+                                </div>
+                                <div class="rating-row" data-value="4"
+                                    style="display: flex; align-items: center; padding: 12px 20px; border: 1px solid #eee; border-radius: 8px; cursor: pointer; transition: all 0.3s ease;">
+                                    <span class="stars"
+                                        style="color: var(--accent); font-size: 1.2rem; margin-right: 15px;">★★★★☆</span>
+                                    <span class="label" style="font-weight: 500;">Very Satisfied</span>
+                                </div>
+                                <div class="rating-row" data-value="3"
+                                    style="display: flex; align-items: center; padding: 12px 20px; border: 1px solid #eee; border-radius: 8px; cursor: pointer; transition: all 0.3s ease;">
+                                    <span class="stars"
+                                        style="color: var(--accent); font-size: 1.2rem; margin-right: 15px;">★★★☆☆</span>
+                                    <span class="label" style="font-weight: 500;">Good Experience</span>
+                                </div>
+                            </div>
+                            <p style="font-size: 0.85rem; color: #666; margin-top: 10px; font-style: italic;">* Minimum
+                                3-star rating required to maintain our premium quality standards.</p>
+                            <input type="hidden" id="ratingValue" value="5">
+                        </div>
+                        <div class="form-group">
+                            <label for="reviewText">Your Story</label>
+                            <textarea id="reviewText" class="form-control" rows="4"
+                                placeholder="Describe your experience with us..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-large" style="width: 100%;">Post Review</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
         <!-- Testimonials -->
         <section class="section">
             <div class="container">
-                <div class="grid layout-3">
-                    <div class="card">
+                <div class="grid layout-3" id="reviewsList">
+                    <div class="card" style="position: relative;">
+                        <!-- Public Verified Review (Non-deletable) -->
+                        <div class="stars" style="font-size: 16px; margin-bottom: 12px; color: var(--accent);">★★★★★
+                        </div>
                         <p>"Geeta's is an absolute gem in Pilanji. The staff is incredibly professional, and my hair has
                             never looked better. Highly recommended!"</p>
-                        <span class="reviewer" style="display: block; margin-top: 16px; font-weight: 500;">- Verified
-                            Client</span>
+                        <span class="reviewer">- Verified Client</span>
                     </div>
                 </div>
             </div>
         </section>
+
+        <style>
+            .rating-row.active {
+                background: #fff9f8 !important;
+                border-color: var(--accent) !important;
+                box-shadow: 0 4px 12px rgba(212, 175, 55, 0.1);
+            }
+
+            .rating-row:hover {
+                background: #fdfdfd;
+                border-color: #ddd;
+            }
+        </style>
+
+        <script>
+            // Row-based rating selector
+            const ratingSelector = document.getElementById('ratingSelector');
+            const ratingRows = document.querySelectorAll('.rating-row');
+            const ratingInput = document.getElementById('ratingValue');
+
+            ratingRows.forEach(row => {
+                row.addEventListener('click', () => {
+                    const value = row.getAttribute('data-value');
+                    ratingInput.value = value;
+
+                    ratingRows.forEach(r => r.classList.remove('active'));
+                    row.classList.add('active');
+                });
+            });
+
+            // Review submission simulation
+            const reviewForm = document.getElementById('reviewForm');
+            const reviewsList = document.getElementById('reviewsList');
+
+            reviewForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                const name = document.getElementById('reviewerName').value;
+                const text = document.getElementById('reviewText').value;
+                const rating = parseInt(ratingInput.value);
+
+                const starString = '★'.repeat(rating) + '☆'.repeat(5 - rating);
+
+                // Add delete button ONLY for user's own review
+                const newReview = `
+                    <div class="card user-submitted" style="animation: fadeIn 0.5s ease; border-top: 3px solid var(--accent); position: relative;">
+                        <button onclick="this.parentElement.remove()" 
+                            style="position: absolute; top: 15px; right: 15px; background: none; border: none; color: rgba(51, 42, 41, 0.4); cursor: pointer; font-size: 14px;" 
+                            title="Delete my review"><i class="fa-solid fa-trash-can"></i></button>
+                        <div class="stars" style="font-size: 16px; margin-bottom: 12px; color: var(--accent);">${starString}</div>
+                        <p>"${text}"</p>
+                        <span class="reviewer" style="font-weight: 600;">- ${name} (You)</span>
+                    </div>
+                `;
+
+                reviewsList.insertAdjacentHTML('afterbegin', newReview);
+                reviewForm.reset();
+
+                // Reset to default 5 stars
+                ratingRows.forEach(r => r.classList.remove('active'));
+                const defaultRow = document.querySelector('.rating-row[data-value="5"]');
+                if (defaultRow) defaultRow.classList.add('active');
+                ratingInput.value = 5;
+
+                document.getElementById('reviewsList').scrollIntoView({ behavior: 'smooth' });
+            });
+        </script>
+
+        <style>
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            .star-rating-input span {
+                transition: color 0.2s;
+            }
+
+            .star-rating-input span:hover {
+                color: var(--accent);
+                opacity: 0.8;
+            }
+        </style>
     </main>
 
     <footer>
@@ -74,7 +218,8 @@
                 <div class="social-links">
                     <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
                     <a href="#" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" class="social-btn"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://wa.me/919811420116" target="_blank" class="social-btn"><i
+                            class="fa-brands fa-whatsapp"></i></a>
                 </div>
             </div>
             <div class="footer-col">
@@ -91,14 +236,15 @@
                 <p><i class="fa-solid fa-location-dot" style="color: var(--accent); margin-right: 8px;"></i> Pilanji,
                     New Delhi, Delhi 110003</p>
                 <p style="margin-top: 8px;"><i class="fa-solid fa-phone"
-                        style="color: var(--accent); margin-right: 8px;"></i> 098114 20116</p>
+                        style="color: var(--accent); margin-right: 8px;"></i> <a href="tel:+919811420116"
+                        style="text-decoration: none; color: inherit;">098114 20116</a></p>
                 <div style="margin-top: 16px;">
                     <span class="rating-stars">★★★★★</span>
                     <p>4.9 Rating (6.0 Reviews)</p>
                 </div>
                 <div class="map-container mt-4">
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m12!1m3!1d3502.5029!2d77.2173!3d28.5733!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce3d34c9efd4b%3A0x4a76af84ad980ad8!2sGeeta's+Salon!5e0!3m2!1sen!2sin!4v1709664000000!5m2!1sen!2sin"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3503.8792949696344!2d77.2199632!3d28.573387099999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce3d34c9efd4b%3A0x4a76af84ad980ad8!2sGeeta's%20Salon!5e0!3m2!1sen!2sin!4v1772768650030!5m2!1sen!2sin"
                         width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
                     </iframe>
                 </div>
