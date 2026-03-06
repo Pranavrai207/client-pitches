@@ -4,34 +4,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customer Reviews | Geeta's Salon - Rated 4.9 Stars</title>
-    <meta name="description"
-        content="Read what our clients have to say about their experience at Geeta's Salon. Celebrating our 4.9-star rating and exceptional beauty services.">
-
-    <!-- Fonts -->
+    <title>Client Reviews | Geeta's Salon</title>
+    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap"
         rel="stylesheet">
-
-    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .rating-row {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
 
-    <link rel="stylesheet" href="assets/css/style.css">
+        .rating-option {
+            flex: 1;
+            padding: 12px;
+            text-align: center;
+            border: 1px solid rgba(51, 42, 41, 0.1);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .rating-option:hover {
+            border-color: var(--accent);
+            background: var(--bg-light);
+        }
+
+        .rating-option.selected {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: white;
+        }
+    </style>
 </head>
 
 <body>
-
     <header>
         <div class="container header-wrapper">
             <a href="index.html" class="logo">Geeta's<span>.</span></a>
-
             <input type="checkbox" id="menu-toggle" class="menu-toggle">
             <label for="menu-toggle" class="hamburger">
                 <span></span><span></span><span></span>
             </label>
-
             <nav class="nav-links">
                 <a href="index.html">Home</a>
                 <a href="services.html">Services</a>
@@ -43,169 +62,65 @@
     </header>
 
     <main>
-        <!-- Page Header -->
-        <section class="content-wrapper" style="padding-top: 120px; text-align: center;">
+        <section class="section-header">
             <div class="container">
-                <div class="section-header" style="background: none; border: none; padding-top: 0;">
-                    <h2>Customer <span>Reviews</span></h2>
-                </div>
-                <div style="margin-top: 24px;">
-                    <span style="font-size: 3rem; color: var(--accent); font-weight: 700;">4.9</span>
-                    <span class="rating-stars" style="font-size: 1.5rem;">★★★★★</span>
-                    <p style="color: var(--text-light);">Based on 6.0 Verified Reviews</p>
-                </div>
+                <h2>Client <span>Reviews</span></h2>
+                <p>See what our wonderful clients have to say.</p>
             </div>
         </section>
 
-        <!-- Write a Review -->
-        <section class="content-wrapper" style="background: var(--bg-light);" id="write-review">
-            <div class="container" style="text-align: center;">
-                <div class="section-header" style="background: none; border: none; padding-top: 0;">
-                    <h2>Share Your <span>Experience</span></h2>
-                    <p>We value your feedback. Let us know how we did!</p>
-                </div>
-
-                <div class="review-form" style="margin-top: 40px; text-align: left;">
-                    <form id="reviewForm">
-                        <div class="form-group">
-                            <label for="reviewerName">Your Name</label>
-                            <input type="text" id="reviewerName" class="form-control" placeholder="Enter your name"
-                                required>
-                        </div>
-                        <div class="form-group" style="margin-bottom: 30px;">
-                            <label style="display: block; margin-bottom: 15px; font-weight: 500;">Select Your
-                                Rating</label>
-                            <div class="rating-selector" id="ratingSelector"
-                                style="display: flex; flex-direction: column; gap: 12px;">
-                                <div class="rating-row active" data-value="5"
-                                    style="display: flex; align-items: center; padding: 15px 25px; border: 1px solid rgba(0,0,0,0.05); background: var(--white); border-radius: 10px; cursor: pointer; transition: all 0.3s ease;">
-                                    <span class="stars"
-                                        style="color: var(--accent); font-size: 1.2rem; margin-right: 20px;">★★★★★</span>
-                                    <span class="label" style="font-weight: 500;">Exceptional Transformation</span>
-                                </div>
-                                <div class="rating-row" data-value="4"
-                                    style="display: flex; align-items: center; padding: 15px 25px; border: 1px solid rgba(0,0,0,0.05); background: var(--white); border-radius: 10px; cursor: pointer; transition: all 0.3s ease;">
-                                    <span class="stars"
-                                        style="color: var(--accent); font-size: 1.2rem; margin-right: 20px;">★★★★☆</span>
-                                    <span class="label" style="font-weight: 500;">Very Satisfied</span>
-                                </div>
-                                <div class="rating-row" data-value="3"
-                                    style="display: flex; align-items: center; padding: 15px 25px; border: 1px solid rgba(0,0,0,0.05); background: var(--white); border-radius: 10px; cursor: pointer; transition: all 0.3s ease;">
-                                    <span class="stars"
-                                        style="color: var(--accent); font-size: 1.2rem; margin-right: 20px;">★★★☆☆</span>
-                                    <span class="label" style="font-weight: 500;">Good Experience</span>
-                                </div>
-                            </div>
-                            <p style="font-size: 0.85rem; color: #666; margin-top: 15px; font-style: italic;">* Minimum
-                                3-star rating required to maintain our premium quality standards.</p>
-                            <input type="hidden" id="ratingValue" value="5">
-                        </div>
-                        <div class="form-group">
-                            <label for="reviewText">Your Story</label>
-                            <textarea id="reviewText" class="form-control" rows="4"
-                                placeholder="Describe your experience with us..." required></textarea>
-                        </div>
-                        <button type="submit" class="btn" style="width: 100%; padding: 15px;">Post Review</button>
-                    </form>
-                </div>
-            </div>
-        </section>
-
-        <!-- Testimonials -->
         <section class="content-wrapper">
-            <div class="container">
-                <div class="grid" id="reviewsList">
-                    <div class="card" style="position: relative;">
-                        <!-- Public Verified Review (Non-deletable) -->
-                        <div class="stars" style="font-size: 16px; margin-bottom: 12px; color: var(--accent);">★★★★★
+            <div class="container" style="text-align: center;">
+                <h3 style="font-family: var(--font-heading); margin-bottom: 40px;">Share Your Experience</h3>
+                <div class="review-form">
+                    <div class="form-group">
+                        <label>Your Overall Rating</label>
+                        <div class="rating-row">
+                            <div class="rating-option" onclick="selectRating(3)">3 ★</div>
+                            <div class="rating-option" onclick="selectRating(4)">4 ★</div>
+                            <div class="rating-option selected" onclick="selectRating(5)">5 ★</div>
                         </div>
-                        <p style="font-style: italic;">"Geeta's is an absolute gem in Pilanji. The staff is incredibly
-                            professional, and my hair has
-                            never looked better. Highly recommended!"</p>
-                        <span class="reviewer"
-                            style="display: block; margin-top: 15px; font-weight: 600; color: var(--accent);">— Verified
-                            Client</span>
                     </div>
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" class="form-control" placeholder="Enter your full name">
+                    </div>
+                    <div class="form-group">
+                        <label for="review">Your Message</label>
+                        <textarea id="review" class="form-control" rows="4"
+                            placeholder="How was your transformation?"></textarea>
+                    </div>
+                    <button class="btn" style="width: 100%;" onclick="submitReview()">Submit Review</button>
+                    <p id="success-msg" style="margin-top: 20px; color: #27ae60; display: none;">Thank you! Your review
+                        has been submitted for verification.</p>
                 </div>
             </div>
         </section>
 
-        <style>
-            .rating-row.active {
-                background: #fff9f8 !important;
-                border-color: var(--accent) !important;
-                box-shadow: 0 4px 12px rgba(216, 154, 154, 0.15);
-            }
-
-            .rating-row:hover {
-                background: #fafafa;
-                border-color: #ddd;
-            }
-
-            @keyframes fadeIn {
-                from {
-                    opacity: 0;
-                    transform: translateY(20px);
-                }
-
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }
-        </style>
-
-        <script>
-            // Row-based rating selector
-            const ratingSelector = document.getElementById('ratingSelector');
-            const ratingRows = document.querySelectorAll('.rating-row');
-            const ratingInput = document.getElementById('ratingValue');
-
-            ratingRows.forEach(row => {
-                row.addEventListener('click', () => {
-                    const value = row.getAttribute('data-value');
-                    ratingInput.value = value;
-
-                    ratingRows.forEach(r => r.classList.remove('active'));
-                    row.classList.add('active');
-                });
-            });
-
-            // Review submission simulation
-            const reviewForm = document.getElementById('reviewForm');
-            const reviewsList = document.getElementById('reviewsList');
-
-            reviewForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-
-                const name = document.getElementById('reviewerName').value;
-                const text = document.getElementById('reviewText').value;
-                const rating = parseInt(ratingInput.value);
-
-                const starString = '★'.repeat(rating) + '☆'.repeat(5 - rating);
-
-                const newReview = `
-                    <div class="card user-submitted" style="animation: fadeIn 0.5s ease; border-top: 3px solid var(--accent); position: relative;">
-                        <button onclick="this.parentElement.remove()" 
-                            style="position: absolute; top: 15px; right: 15px; background: none; border: none; color: rgba(0,0,0,0.2); cursor: pointer; font-size: 14px;" 
-                            title="Delete my review"><i class="fa-solid fa-trash-can"></i></button>
-                        <div class="stars" style="font-size: 16px; margin-bottom: 12px; color: var(--accent);">${starString}</div>
-                        <p style="font-style: italic;">"${text}"</p>
-                        <span class="reviewer" style="font-weight: 600; display: block; margin-top: 15px; color: var(--accent);">— ${name} (You)</span>
+        <section class="content-wrapper" style="background: var(--bg-light);">
+            <div class="container">
+                <div class="grid" id="reviews-container">
+                    <div class="card">
+                        <span class="rating-stars">★★★★★</span>
+                        <p style="margin-bottom: 20px;">"The best bridal makeup experience I could have asked for. Geeta
+                            and her team are true artists!"</p>
+                        <span style="font-weight: 600;">— Priya K.</span>
                     </div>
-                `;
-
-                reviewsList.insertAdjacentHTML('afterbegin', newReview);
-                reviewForm.reset();
-
-                ratingRows.forEach(r => r.classList.remove('active'));
-                const defaultRow = document.querySelector('.rating-row[data-value="5"]');
-                if (defaultRow) defaultRow.classList.add('active');
-                ratingInput.value = 5;
-
-                document.getElementById('reviewsList').scrollIntoView({ behavior: 'smooth' });
-            });
-        </script>
+                    <div class="card">
+                        <span class="rating-stars">★★★★★</span>
+                        <p style="margin-bottom: 20px;">"Incredible hair spa results. My hair feels so healthy and
+                            shiny. The ambiance is very relaxing."</p>
+                        <span style="font-weight: 600;">— Elena R.</span>
+                    </div>
+                    <div class="card">
+                        <span class="rating-stars">★★★★</span>
+                        <p style="margin-bottom: 20px;">"Very professional staff and hygienic environment. Highly
+                            recommended for facials."</p>
+                        <span style="font-weight: 600;">— Sarah M.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
@@ -213,7 +128,7 @@
             <div class="footer-col">
                 <a href="index.html" class="logo">Geeta's<span>.</span></a>
                 <p style="margin-top: 20px;">Premium beauty parlour in Pilanji, New Delhi. Dedicated to excellence in
-                    bridal, hair, and skincare.</p>
+                    bridal, hair, and skincare since our founding.</p>
                 <div class="social-links">
                     <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
                     <a href="#" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
@@ -233,8 +148,7 @@
             <div class="footer-col">
                 <h4>Visit Us</h4>
                 <p style="margin-bottom: 15px;"><i class="fa-solid fa-location-dot"
-                        style="color: var(--accent); margin-right: 10px;"></i> Pilanji,
-                    New Delhi, Delhi 110003</p>
+                        style="color: var(--accent); margin-right: 10px;"></i> Pilanji, New Delhi, Delhi 110003</p>
                 <p><i class="fa-solid fa-phone" style="color: var(--accent); margin-right: 10px;"></i> <a
                         href="tel:+919811420116" style="text-decoration: none; color: inherit;">098114 20116</a></p>
                 <div style="margin-top: 25px;">
@@ -244,8 +158,7 @@
                 <div class="map-container" style="margin-top: 20px;">
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3503.8792949696344!2d77.2199632!3d28.573387099999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce3d34c9efd4b%3A0x4a76af84ad980ad8!2sGeeta's%20Salon!5e0!3m2!1sen!2sin!4v1772768650030!5m2!1sen!2sin"
-                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
-                    </iframe>
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
         </div>
@@ -254,6 +167,28 @@
         </div>
     </footer>
 
+    <script>
+        function selectRating(stars) {
+            const options = document.querySelectorAll('.rating-option');
+            options.forEach((opt, index) => {
+                if (index === stars - 3) opt.classList.add('selected');
+                else opt.classList.remove('selected');
+            });
+        }
+
+        function submitReview() {
+            const name = document.getElementById('name').value;
+            const review = document.getElementById('review').value;
+            if (!name || !review) {
+                alert('Please fill out all fields.');
+                return;
+            }
+            document.getElementById('success-msg').style.display = 'block';
+            setTimeout(() => {
+                location.reload();
+            }, 3000);
+        }
+    </script>
 </body>
 
 </html>
