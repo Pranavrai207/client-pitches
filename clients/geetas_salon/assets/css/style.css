@@ -11,6 +11,10 @@
     --font-body: 'Inter', sans-serif;
     --shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     --shadow-large: 0 16px 48px rgba(51, 42, 41, 0.08);
+    --gold-light: #d4bc8a;
+    /* Soft, premium light gold */
+    --chocolate: #3d3432;
+    /* Deep chocolaty brown */
 }
 
 /* --- RESET & BASICS --- */
@@ -139,7 +143,7 @@ section {
 /* --- HERO SECTION --- */
 #home {
     height: 90vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
         url("../images/hero.png") center/cover no-repeat;
     display: flex;
     align-items: center;
