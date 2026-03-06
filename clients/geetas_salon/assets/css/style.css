@@ -22,7 +22,6 @@
 
 html {
     scroll-behavior: smooth;
-    /* Enables smooth scrolling between sections */
 }
 
 body {
@@ -133,7 +132,6 @@ header {
 }
 
 /* --- SECTION STYLING --- */
-/* This ensures the sticky header doesn't cover the section titles when scrolling */
 section {
     scroll-margin-top: 80px;
 }
@@ -165,7 +163,7 @@ section {
     opacity: 0.9;
 }
 
-/* --- CONTENT SECTIONS (Services, About, Reviews) --- */
+/* --- CONTENT SECTIONS --- */
 .section-header {
     background: var(--bg-light);
     padding: 60px 0;
@@ -210,105 +208,10 @@ section {
     margin-bottom: 15px;
 }
 
-.price {
-    font-weight: 600;
-    color: var(--text-main);
-    display: block;
-    margin-top: 15px;
-}
-
 .rating-stars {
     color: var(--accent);
     margin-bottom: 8px;
     display: block;
-}
-
-/* --- REVIEW SYSTEM --- */
-.review-form {
-    max-width: 600px;
-    margin: 0 auto 64px auto;
-    padding: 40px;
-    background: var(--card-bg);
-    border-radius: 12px;
-    box-shadow: var(--shadow-large);
-}
-
-.form-group {
-    margin-bottom: 24px;
-    text-align: left;
-}
-
-.form-group label {
-    display: block;
-    font-weight: 500;
-    margin-bottom: 8px;
-    font-size: 14px;
-}
-
-.form-control {
-    width: 100%;
-    padding: 12px 16px;
-    border: 1px solid rgba(51, 42, 41, 0.1);
-    border-radius: 4px;
-    font-family: var(--font-body);
-    font-size: 16px;
-    transition: border-color 0.3s ease;
-}
-
-.form-control:focus {
-    outline: none;
-    border-color: var(--accent);
-}
-
-/* --- PRICING TABLE --- */
-.price-list {
-    max-width: 800px;
-    margin: 48px auto;
-    background: var(--card-bg);
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 8px 32px rgba(51, 42, 41, 0.04);
-}
-
-.price-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 16px 0;
-    border-bottom: 1px solid rgba(51, 42, 41, 0.05);
-}
-
-.price-item:last-child {
-    border-bottom: none;
-}
-
-.price-name {
-    font-weight: 500;
-}
-
-.price-value {
-    color: var(--accent);
-    font-weight: 600;
-}
-
-/* --- EXPERTS SECTION --- */
-.experts-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-    margin-top: 48px;
-}
-
-.expert-card {
-    text-align: center;
-}
-
-.expert-card img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin: 0 auto 16px auto;
-    object-fit: cover;
 }
 
 /* --- FOOTER --- */
@@ -394,7 +297,7 @@ footer {
     opacity: 0.6;
 }
 
-/* --- RESPONSIVE DESIGN (MOBILE) --- */
+/* --- RESPONSIVE DESIGN --- */
 @media (max-width: 992px) {
     .footer-grid {
         grid-template-columns: 1fr 1fr;
@@ -404,10 +307,6 @@ footer {
 @media (max-width: 768px) {
     .hamburger {
         display: flex;
-    }
-
-    .desktop-btn {
-        display: none;
     }
 
     .nav-links {
@@ -444,9 +343,5 @@ footer {
 
     .nav-links-footer {
         align-items: center;
-    }
-
-    .experts-grid {
-        grid-template-columns: 1fr;
     }
 }
