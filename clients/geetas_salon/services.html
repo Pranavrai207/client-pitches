@@ -16,7 +16,7 @@
         rel="stylesheet">
 
     <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -24,41 +24,51 @@
 <body>
 
     <header>
-        <div class="container">
+        <div class="container header-wrapper">
             <a href="index.html" class="logo">Geeta's<span>.</span></a>
+
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="hamburger">
+                <span></span><span></span><span></span>
+            </label>
+
             <nav class="nav-links">
                 <a href="index.html">Home</a>
                 <a href="services.html">Services</a>
                 <a href="about.html">Our Story</a>
                 <a href="reviews.html">Reviews</a>
+                <a href="tel:+919811420116" class="btn">Book Now</a>
             </nav>
-            <a href="tel:+919811420116" class="btn">Book Now</a>
         </div>
     </header>
 
     <main>
         <!-- Page Header -->
-        <section class="section" style="padding-top: 160px; background-color: var(--color-white); text-align: center;">
+        <section class="content-wrapper" style="padding-top: 120px; text-align: center;">
             <div class="container">
-                <h1 class="serif" style="font-size: 3.5rem;">Our <span style="color: var(--accent);">Services</span>
-                </h1>
-                <p style="max-width: 800px; margin: 0 auto; margin-top: 16px;">Curated beauty treatments tailored for
+                <div class="section-header" style="background: none; border: none; padding-top: 0;">
+                    <h2>Our <span>Services</span></h2>
+                </div>
+                <p style="max-width: 800px; margin: 0 auto; margin-top: 16px; color: var(--text-light);">Curated beauty
+                    treatments tailored for
                     elegance and perfection. Every service is a step towards your perfect transformation.</p>
             </div>
         </section>
 
         <!-- Services Detailed -->
-        <section class="section">
+        <section class="content-wrapper" style="padding-top: 0;">
             <div class="container">
-                <div class="grid layout-3">
+                <div class="grid">
                     <div class="card">
-                        <img src="assets/images/makeup.png" alt="Bridal & Event Makeup">
+                        <img src="assets/images/makeup.png" alt="Bridal & Event Makeup"
+                            style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px; margin-bottom: 20px;">
                         <h3>Bridal Artistry</h3>
                         <p>Flawless, high-end makeup artistry for weddings and special occasions, ensuring you shine
                             brighter than ever.</p>
                     </div>
                     <div class="card">
-                        <img src="assets/images/hair.png" alt="Hair Care Therapeutics">
+                        <img src="assets/images/hair.png" alt="Hair Care Therapeutics"
+                            style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px; margin-bottom: 20px;">
                         <h3>Luxury Hair Care</h3>
                         <p>From precision cuts to revitalizing spa treatments, transform your hair with premium
                             international products.</p>
@@ -84,14 +94,15 @@
         </section>
 
         <!-- Pricing Table -->
-        <section class="section bg-light">
+        <section class="content-wrapper" style="background: var(--bg-light);">
             <div class="container">
-                <div class="text-center">
-                    <h2>Service <span style="color: var(--accent);">Menu</span></h2>
+                <div class="section-header" style="background: none; border: none; padding-top: 0; text-align: center;">
+                    <h2>Service <span>Menu</span></h2>
                     <p>Transparent pricing for premium excellence.</p>
                 </div>
 
-                <div class="price-list mt-5">
+                <div class="price-list"
+                    style="margin-top: 40px; max-width: 800px; margin-left: auto; margin-right: auto;">
                     <div class="price-item">
                         <span class="price-name">Bridal Makeup (Basic)</span>
                         <span class="price-value">₹ 5,000+</span>
@@ -118,10 +129,11 @@
                     </div>
                 </div>
 
-                <div class="text-center mt-4">
+                <div style="text-align: center; margin-top: 40px;">
                     <p style="font-size: 14px; opacity: 0.7;">*Prices may vary based on product selection and hair
                         length. Please call for a detailed consultation.</p>
-                    <a href="tel:+919811420116" class="btn mt-3">Book Your Consultation</a>
+                    <a href="tel:+919811420116" class="btn" style="margin-top: 20px; display: inline-block;">Book Your
+                        Consultation</a>
                 </div>
             </div>
         </section>
@@ -131,7 +143,7 @@
         <div class="container footer-grid">
             <div class="footer-col">
                 <a href="index.html" class="logo">Geeta's<span>.</span></a>
-                <p style="margin-top: 16px;">Premium beauty parlour in Pilanji, New Delhi. Dedicated to excellence in
+                <p style="margin-top: 20px;">Premium beauty parlour in Pilanji, New Delhi. Dedicated to excellence in
                     bridal, hair, and skincare.</p>
                 <div class="social-links">
                     <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
@@ -151,16 +163,16 @@
             </div>
             <div class="footer-col">
                 <h4>Visit Us</h4>
-                <p><i class="fa-solid fa-location-dot" style="color: var(--accent); margin-right: 8px;"></i> Pilanji,
+                <p style="margin-bottom: 15px;"><i class="fa-solid fa-location-dot"
+                        style="color: var(--accent); margin-right: 10px;"></i> Pilanji,
                     New Delhi, Delhi 110003</p>
-                <p style="margin-top: 8px;"><i class="fa-solid fa-phone"
-                        style="color: var(--accent); margin-right: 8px;"></i> <a href="tel:+919811420116"
-                        style="text-decoration: none; color: inherit;">098114 20116</a></p>
-                <div style="margin-top: 16px;">
+                <p><i class="fa-solid fa-phone" style="color: var(--accent); margin-right: 10px;"></i> <a
+                        href="tel:+919811420116" style="text-decoration: none; color: inherit;">098114 20116</a></p>
+                <div style="margin-top: 25px;">
                     <span class="rating-stars">★★★★★</span>
                     <p>4.9 Rating (6.0 Reviews)</p>
                 </div>
-                <div class="map-container mt-4">
+                <div class="map-container" style="margin-top: 20px;">
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3503.8792949696344!2d77.2199632!3d28.573387099999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce3d34c9efd4b%3A0x4a76af84ad980ad8!2sGeeta's%20Salon!5e0!3m2!1sen!2sin!4v1772768650030!5m2!1sen!2sin"
                         width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
@@ -169,7 +181,7 @@
             </div>
         </div>
         <div class="copyright">
-            <p>&copy; 2026 Geeta's Salon. All rights reserved.</p>
+            <p>&copy; 2026 Geeta's Salon. All rights reserved. | Luxury Beauty Redefined</p>
         </div>
     </footer>
 

@@ -16,7 +16,7 @@
         rel="stylesheet">
 
     <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -24,39 +24,48 @@
 <body>
 
     <header>
-        <div class="container">
+        <div class="container header-wrapper">
             <a href="index.html" class="logo">Geeta's<span>.</span></a>
+
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="hamburger">
+                <span></span><span></span><span></span>
+            </label>
+
             <nav class="nav-links">
                 <a href="index.html">Home</a>
                 <a href="services.html">Services</a>
                 <a href="about.html">Our Story</a>
                 <a href="reviews.html">Reviews</a>
+                <a href="tel:+919811420116" class="btn">Book Now</a>
             </nav>
-            <a href="tel:+919811420116" class="btn">Book Now</a>
         </div>
     </header>
 
     <main>
         <!-- Page Header -->
-        <section class="section" style="padding-top: 160px; background-color: var(--color-white); text-align: center;">
+        <section class="content-wrapper" style="padding-top: 120px; text-align: center;">
             <div class="container">
-                <h1 class="serif" style="font-size: 3.5rem;">Customer <span style="color: var(--accent);">Reviews</span>
-                </h1>
-                <div style="margin-top: 16px;">
-                    <span style="font-size: 2.5rem; color: var(--accent);">4.9</span>
+                <div class="section-header" style="background: none; border: none; padding-top: 0;">
+                    <h2>Customer <span>Reviews</span></h2>
+                </div>
+                <div style="margin-top: 24px;">
+                    <span style="font-size: 3rem; color: var(--accent); font-weight: 700;">4.9</span>
                     <span class="rating-stars" style="font-size: 1.5rem;">★★★★★</span>
-                    <p>Based on 6.0 Verified Reviews</p>
+                    <p style="color: var(--text-light);">Based on 6.0 Verified Reviews</p>
                 </div>
             </div>
         </section>
 
         <!-- Write a Review -->
-        <section class="section bg-light" id="write-review">
-            <div class="container text-center">
-                <h2>Share Your <span style="color: var(--accent);">Experience</span></h2>
-                <p>We value your feedback. Let us know how we did!</p>
+        <section class="content-wrapper" style="background: var(--bg-light);" id="write-review">
+            <div class="container" style="text-align: center;">
+                <div class="section-header" style="background: none; border: none; padding-top: 0;">
+                    <h2>Share Your <span>Experience</span></h2>
+                    <p>We value your feedback. Let us know how we did!</p>
+                </div>
 
-                <div class="review-form mt-4">
+                <div class="review-form" style="margin-top: 40px; text-align: left;">
                     <form id="reviewForm">
                         <div class="form-group">
                             <label for="reviewerName">Your Name</label>
@@ -67,27 +76,27 @@
                             <label style="display: block; margin-bottom: 15px; font-weight: 500;">Select Your
                                 Rating</label>
                             <div class="rating-selector" id="ratingSelector"
-                                style="display: flex; flex-direction: column; gap: 10px;">
+                                style="display: flex; flex-direction: column; gap: 12px;">
                                 <div class="rating-row active" data-value="5"
-                                    style="display: flex; align-items: center; padding: 12px 20px; border: 1px solid #eee; border-radius: 8px; cursor: pointer; transition: all 0.3s ease;">
+                                    style="display: flex; align-items: center; padding: 15px 25px; border: 1px solid rgba(0,0,0,0.05); background: var(--white); border-radius: 10px; cursor: pointer; transition: all 0.3s ease;">
                                     <span class="stars"
-                                        style="color: var(--accent); font-size: 1.2rem; margin-right: 15px;">★★★★★</span>
+                                        style="color: var(--accent); font-size: 1.2rem; margin-right: 20px;">★★★★★</span>
                                     <span class="label" style="font-weight: 500;">Exceptional Transformation</span>
                                 </div>
                                 <div class="rating-row" data-value="4"
-                                    style="display: flex; align-items: center; padding: 12px 20px; border: 1px solid #eee; border-radius: 8px; cursor: pointer; transition: all 0.3s ease;">
+                                    style="display: flex; align-items: center; padding: 15px 25px; border: 1px solid rgba(0,0,0,0.05); background: var(--white); border-radius: 10px; cursor: pointer; transition: all 0.3s ease;">
                                     <span class="stars"
-                                        style="color: var(--accent); font-size: 1.2rem; margin-right: 15px;">★★★★☆</span>
+                                        style="color: var(--accent); font-size: 1.2rem; margin-right: 20px;">★★★★☆</span>
                                     <span class="label" style="font-weight: 500;">Very Satisfied</span>
                                 </div>
                                 <div class="rating-row" data-value="3"
-                                    style="display: flex; align-items: center; padding: 12px 20px; border: 1px solid #eee; border-radius: 8px; cursor: pointer; transition: all 0.3s ease;">
+                                    style="display: flex; align-items: center; padding: 15px 25px; border: 1px solid rgba(0,0,0,0.05); background: var(--white); border-radius: 10px; cursor: pointer; transition: all 0.3s ease;">
                                     <span class="stars"
-                                        style="color: var(--accent); font-size: 1.2rem; margin-right: 15px;">★★★☆☆</span>
+                                        style="color: var(--accent); font-size: 1.2rem; margin-right: 20px;">★★★☆☆</span>
                                     <span class="label" style="font-weight: 500;">Good Experience</span>
                                 </div>
                             </div>
-                            <p style="font-size: 0.85rem; color: #666; margin-top: 10px; font-style: italic;">* Minimum
+                            <p style="font-size: 0.85rem; color: #666; margin-top: 15px; font-style: italic;">* Minimum
                                 3-star rating required to maintain our premium quality standards.</p>
                             <input type="hidden" id="ratingValue" value="5">
                         </div>
@@ -96,23 +105,26 @@
                             <textarea id="reviewText" class="form-control" rows="4"
                                 placeholder="Describe your experience with us..." required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-large" style="width: 100%;">Post Review</button>
+                        <button type="submit" class="btn" style="width: 100%; padding: 15px;">Post Review</button>
                     </form>
                 </div>
             </div>
         </section>
 
         <!-- Testimonials -->
-        <section class="section">
+        <section class="content-wrapper">
             <div class="container">
-                <div class="grid layout-3" id="reviewsList">
+                <div class="grid" id="reviewsList">
                     <div class="card" style="position: relative;">
                         <!-- Public Verified Review (Non-deletable) -->
                         <div class="stars" style="font-size: 16px; margin-bottom: 12px; color: var(--accent);">★★★★★
                         </div>
-                        <p>"Geeta's is an absolute gem in Pilanji. The staff is incredibly professional, and my hair has
+                        <p style="font-style: italic;">"Geeta's is an absolute gem in Pilanji. The staff is incredibly
+                            professional, and my hair has
                             never looked better. Highly recommended!"</p>
-                        <span class="reviewer">- Verified Client</span>
+                        <span class="reviewer"
+                            style="display: block; margin-top: 15px; font-weight: 600; color: var(--accent);">— Verified
+                            Client</span>
                     </div>
                 </div>
             </div>
@@ -122,12 +134,24 @@
             .rating-row.active {
                 background: #fff9f8 !important;
                 border-color: var(--accent) !important;
-                box-shadow: 0 4px 12px rgba(212, 175, 55, 0.1);
+                box-shadow: 0 4px 12px rgba(216, 154, 154, 0.15);
             }
 
             .rating-row:hover {
-                background: #fdfdfd;
+                background: #fafafa;
                 border-color: #ddd;
+            }
+
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
             }
         </style>
 
@@ -160,22 +184,20 @@
 
                 const starString = '★'.repeat(rating) + '☆'.repeat(5 - rating);
 
-                // Add delete button ONLY for user's own review
                 const newReview = `
                     <div class="card user-submitted" style="animation: fadeIn 0.5s ease; border-top: 3px solid var(--accent); position: relative;">
                         <button onclick="this.parentElement.remove()" 
-                            style="position: absolute; top: 15px; right: 15px; background: none; border: none; color: rgba(51, 42, 41, 0.4); cursor: pointer; font-size: 14px;" 
+                            style="position: absolute; top: 15px; right: 15px; background: none; border: none; color: rgba(0,0,0,0.2); cursor: pointer; font-size: 14px;" 
                             title="Delete my review"><i class="fa-solid fa-trash-can"></i></button>
                         <div class="stars" style="font-size: 16px; margin-bottom: 12px; color: var(--accent);">${starString}</div>
-                        <p>"${text}"</p>
-                        <span class="reviewer" style="font-weight: 600;">- ${name} (You)</span>
+                        <p style="font-style: italic;">"${text}"</p>
+                        <span class="reviewer" style="font-weight: 600; display: block; margin-top: 15px; color: var(--accent);">— ${name} (You)</span>
                     </div>
                 `;
 
                 reviewsList.insertAdjacentHTML('afterbegin', newReview);
                 reviewForm.reset();
 
-                // Reset to default 5 stars
                 ratingRows.forEach(r => r.classList.remove('active'));
                 const defaultRow = document.querySelector('.rating-row[data-value="5"]');
                 if (defaultRow) defaultRow.classList.add('active');
@@ -184,36 +206,13 @@
                 document.getElementById('reviewsList').scrollIntoView({ behavior: 'smooth' });
             });
         </script>
-
-        <style>
-            @keyframes fadeIn {
-                from {
-                    opacity: 0;
-                    transform: translateY(20px);
-                }
-
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }
-
-            .star-rating-input span {
-                transition: color 0.2s;
-            }
-
-            .star-rating-input span:hover {
-                color: var(--accent);
-                opacity: 0.8;
-            }
-        </style>
     </main>
 
     <footer>
         <div class="container footer-grid">
             <div class="footer-col">
                 <a href="index.html" class="logo">Geeta's<span>.</span></a>
-                <p style="margin-top: 16px;">Premium beauty parlour in Pilanji, New Delhi. Dedicated to excellence in
+                <p style="margin-top: 20px;">Premium beauty parlour in Pilanji, New Delhi. Dedicated to excellence in
                     bridal, hair, and skincare.</p>
                 <div class="social-links">
                     <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
@@ -233,16 +232,16 @@
             </div>
             <div class="footer-col">
                 <h4>Visit Us</h4>
-                <p><i class="fa-solid fa-location-dot" style="color: var(--accent); margin-right: 8px;"></i> Pilanji,
+                <p style="margin-bottom: 15px;"><i class="fa-solid fa-location-dot"
+                        style="color: var(--accent); margin-right: 10px;"></i> Pilanji,
                     New Delhi, Delhi 110003</p>
-                <p style="margin-top: 8px;"><i class="fa-solid fa-phone"
-                        style="color: var(--accent); margin-right: 8px;"></i> <a href="tel:+919811420116"
-                        style="text-decoration: none; color: inherit;">098114 20116</a></p>
-                <div style="margin-top: 16px;">
+                <p><i class="fa-solid fa-phone" style="color: var(--accent); margin-right: 10px;"></i> <a
+                        href="tel:+919811420116" style="text-decoration: none; color: inherit;">098114 20116</a></p>
+                <div style="margin-top: 25px;">
                     <span class="rating-stars">★★★★★</span>
                     <p>4.9 Rating (6.0 Reviews)</p>
                 </div>
-                <div class="map-container mt-4">
+                <div class="map-container" style="margin-top: 20px;">
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3503.8792949696344!2d77.2199632!3d28.573387099999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce3d34c9efd4b%3A0x4a76af84ad980ad8!2sGeeta's%20Salon!5e0!3m2!1sen!2sin!4v1772768650030!5m2!1sen!2sin"
                         width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
@@ -251,7 +250,7 @@
             </div>
         </div>
         <div class="copyright">
-            <p>&copy; 2026 Geeta's Salon. All rights reserved.</p>
+            <p>&copy; 2026 Geeta's Salon. All rights reserved. | Luxury Beauty Redefined</p>
         </div>
     </footer>
 
