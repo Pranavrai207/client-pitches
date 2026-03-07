@@ -1,0 +1,12 @@
+{
+    "layout_1": [
+        "navbar-translucent",
+        "hero-fullscreen",
+        "about-luxury",
+        "rooms-horizontal",
+        "amenities-grid",
+        "reviews-quotes",
+        "cta-booking-form",
+        "footer-elegant"
+    ]
+}

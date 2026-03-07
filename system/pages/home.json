@@ -1,0 +1,11 @@
+{
+    "sections": [
+        "navbar",
+        "hero",
+        "about",
+        "services",
+        "reviews",
+        "cta",
+        "footer"
+    ]
+}

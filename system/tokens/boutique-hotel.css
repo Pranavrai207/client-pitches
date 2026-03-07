@@ -1,0 +1,89 @@
+:root {
+    --primary: #1A237E;
+    /* Deep Navy */
+    --primary-dark: #0D1B3E;
+    --secondary: #C5A059;
+    /* Sophisticated Gold/Tan */
+    --text-dark: #121212;
+    --text-light: #4A4A4A;
+    --bg-light: #F5F5F0;
+    --white: #FFFFFF;
+    --font-heading: "Cormorant Garamond", serif;
+    --font-body: "Montserrat", sans-serif;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 32px;
+    --spacing-xl: 100px;
+    --container: 1300px;
+    --border-radius: 0px;
+    --transition: 0.5s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-dark);
+    line-height: 1.8;
+    background-color: var(--white);
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--font-heading);
+    font-weight: 500;
+    font-variant: small-caps;
+}
+
+.container {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+section {
+    padding: var(--spacing-xl) 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: 400;
+    transition: var(--transition);
+    border: 1px solid var(--secondary);
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.btn-large {
+    padding: 20px 40px;
+    font-size: 0.9rem;
+}
+
+.btn-outline {
+    color: var(--secondary);
+    background: transparent;
+}
+
+.btn-outline:hover {
+    background: var(--secondary);
+    color: var(--white);
+}
+
+.btn:not(.btn-outline) {
+    background: var(--secondary);
+    color: var(--white);
+}
+
+.btn:not(.btn-outline):hover {
+    background: var(--primary);
+    border-color: var(--primary);
+}

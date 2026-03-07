@@ -1,0 +1,11 @@
+{
+    "layout_1": [
+        "navbar-basic",
+        "hero-centered",
+        "about-simple",
+        "services-3-grid",
+        "reviews-cards",
+        "cta-booking",
+        "footer-simple"
+    ]
+}

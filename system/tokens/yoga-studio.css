@@ -1,0 +1,87 @@
+:root {
+    --primary: #9C27B0;
+    /* Spiritual Purple/Violet */
+    --primary-dark: #7B1FA2;
+    --secondary: #AED581;
+    /* Nature Green */
+    --text-dark: #263238;
+    --text-light: #546E7A;
+    --bg-light: #F1F8E9;
+    --white: #FFFFFF;
+    --font-heading: "Quicksand", sans-serif;
+    --font-body: "Lato", sans-serif;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 32px;
+    --spacing-xl: 64px;
+    --container: 1000px;
+    --border-radius: 30px;
+    /* Rounded for zen feel */
+    --transition: 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-dark);
+    line-height: 1.6;
+    background-color: var(--white);
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--font-heading);
+    font-weight: 500;
+}
+
+.container {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+section {
+    padding: var(--spacing-xl) 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
+.btn-large {
+    padding: 16px 40px;
+    font-size: 1.1rem;
+}
+
+.btn-outline {
+    border-color: var(--primary);
+    color: var(--primary);
+    background: transparent;
+}
+
+.btn-outline:hover {
+    background: var(--primary);
+    color: var(--white);
+}
+
+.btn:not(.btn-outline) {
+    background: var(--primary);
+    color: var(--white);
+}
+
+.btn:not(.btn-outline):hover {
+    background: var(--primary-dark);
+}

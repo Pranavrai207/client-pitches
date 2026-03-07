@@ -1,0 +1,12 @@
+{
+    "layout_1": [
+        "navbar-centered",
+        "hero-image-bg",
+        "about-minimal",
+        "menu-grid",
+        "gallery-masonry",
+        "reviews-minimal",
+        "cta-visit",
+        "footer-lux"
+    ]
+}

@@ -1,0 +1,92 @@
+:root {
+    --primary: #D4AF37;
+    /* Luxury Gold */
+    --primary-dark: #996515;
+    --secondary: #111111;
+    /* Sleek Black */
+    --text-dark: #212121;
+    --text-light: #555555;
+    --bg-light: #FFFBF0;
+    --white: #FFFFFF;
+    --font-heading: "Playfair Display", serif;
+    --font-body: "Inter", sans-serif;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 32px;
+    --spacing-xl: 100px;
+    --container: 1200px;
+    --border-radius: 0px;
+    /* Sharp for luxury */
+    --transition: 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-dark);
+    line-height: 1.6;
+    background-color: var(--white);
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.container {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+section {
+    padding: var(--spacing-xl) 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+    border: 1px solid var(--primary);
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.btn-large {
+    padding: 20px 40px;
+    font-size: 1rem;
+}
+
+.btn-outline {
+    color: var(--primary);
+    background: transparent;
+}
+
+.btn-outline:hover {
+    background: var(--primary);
+    color: var(--white);
+}
+
+.btn:not(.btn-outline) {
+    background: var(--primary);
+    color: var(--white);
+}
+
+.btn:not(.btn-outline):hover {
+    background: var(--primary-dark);
+    color: var(--white);
+    border-color: var(--primary-dark);
+}

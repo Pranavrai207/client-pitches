@@ -1,0 +1,66 @@
+<section id="services" class="section bg-light">
+    <div class="container text-center">
+        <h2>{{services_headline}}</h2>
+        <p class="section-subtitle">{{services_subheadline}}</p>
+
+        <div class="grid layout-3">
+            {{services_items}}
+        </div>
+    </div>
+</section>
+
+<style>
+    .bg-light {
+        background-color: var(--bg-light);
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .section-subtitle {
+        max-width: 600px;
+        margin: 0 auto var(--spacing-xl) auto;
+        color: var(--text-light);
+    }
+
+    .grid {
+        display: grid;
+        gap: var(--spacing-lg);
+    }
+
+    .layout-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .card {
+        background: var(--white);
+        padding: var(--spacing-lg);
+        border-radius: var(--border-radius);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        transition: var(--transition);
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .card img {
+        width: 100%;
+        border-radius: var(--border-radius);
+        margin-bottom: var(--spacing-md);
+    }
+
+    @media (max-width: 992px) {
+        .layout-3 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .layout-3 {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>

@@ -1,0 +1,51 @@
+<section id="reviews" class="section">
+    <div class="container text-center">
+        <h2>{{reviews_headline}}</h2>
+        <div class="rating-summary">
+            <span class="stars">{{rating_stars}}</span>
+            <span><strong>{{rating_value}} Rating</strong> based on {{review_count}} reviews</span>
+        </div>
+
+        <div class="reviews-grid">
+            {{review_items}}
+        </div>
+    </div>
+</section>
+
+<style>
+    .rating-summary {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: var(--spacing-sm);
+        margin-bottom: var(--spacing-xl);
+    }
+
+    .stars {
+        color: #FFD700;
+        font-size: 1.2rem;
+    }
+
+    .reviews-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: var(--spacing-lg);
+        margin-top: var(--spacing-xl);
+    }
+
+    .review-box {
+        background: var(--bg-light);
+        padding: var(--spacing-lg);
+        border-radius: var(--border-radius);
+        font-style: italic;
+    }
+
+    .reviewer {
+        display: block;
+        margin-top: var(--spacing-md);
+        font-weight: 600;
+        font-style: normal;
+        font-family: var(--font-body);
+        opacity: 0.8;
+    }
+</style>

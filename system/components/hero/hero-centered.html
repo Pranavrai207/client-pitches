@@ -1,0 +1,17 @@
+<section id="hero">
+    <div class="hero-bg">
+        <picture>
+            <source srcset="{{hero_image_webp}}" type="image/webp">
+            <img src="{{hero_image_fallback}}" alt="{{business_name}} Interior">
+        </picture>
+    </div>
+    <div class="hero-content container">
+        <h1>{{hero_headline}}</h1>
+        <p>{{hero_subheadline}}</p>
+        <div class="hero-actions">
+            <a href="tel:{{business_phone}}" class="btn btn-large">{{cta_text_hero_primary}}</a>
+            <a href="{{google_maps_link}}" target="_blank" rel="noopener noreferrer"
+                class="btn btn-large btn-outline">{{cta_text_hero_secondary}}</a>
+        </div>
+    </div>
+</section>

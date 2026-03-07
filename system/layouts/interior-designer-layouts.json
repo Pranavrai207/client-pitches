@@ -1,0 +1,11 @@
+{
+    "layout_1": [
+        "navbar-sticky",
+        "hero-parallax",
+        "portfolio-grid",
+        "about-designer",
+        "process-steps",
+        "cta-consultation",
+        "footer-modern"
+    ]
+}

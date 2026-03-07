@@ -1,0 +1,44 @@
+<section class="section">
+    <div class="container text-center">
+        <div class="cta-box">
+            <h2>{{cta_headline}}</h2>
+            <p>{{cta_subheadline}}</p>
+            <div class="phone-display">{{business_phone}}</div>
+            <a href="tel:{{business_phone}}" class="btn btn-large btn-invert">{{cta_button_text}}</a>
+        </div>
+    </div>
+</section>
+
+<style>
+    .cta-box {
+        background: var(--primary);
+        color: var(--white);
+        padding: var(--spacing-xl);
+        border-radius: var(--border-radius);
+        box-shadow: 0 10px 20px rgba(233, 30, 99, 0.2);
+    }
+
+    .cta-box h2 {
+        margin-bottom: var(--spacing-md);
+    }
+
+    .cta-box p {
+        margin-bottom: var(--spacing-lg);
+        opacity: 0.9;
+    }
+
+    .phone-display {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .btn-invert {
+        background: var(--white) !important;
+        color: var(--primary) !important;
+    }
+
+    .btn-invert:hover {
+        background: var(--bg-light) !important;
+    }
+</style>

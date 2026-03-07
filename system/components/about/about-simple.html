@@ -1,0 +1,39 @@
+<section id="about" class="section">
+    <div class="container split-layout">
+        <div class="about-text">
+            <h2>{{about_headline}}</h2>
+            <p>{{about_description_1}}</p>
+            <p>{{about_description_2}}</p>
+            <div class="mt-4">
+                <a href="{{google_maps_link}}" target="_blank" rel="noopener noreferrer"
+                    class="btn">{{cta_text_about}}</a>
+            </div>
+        </div>
+        <div class="about-image">
+            <picture>
+                <source srcset="{{about_image_webp}}" type="image/webp">
+                <img src="{{about_image_fallback}}" alt="{{business_name}} Interior">
+            </picture>
+        </div>
+    </div>
+</section>
+
+<style>
+    .split-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-xl);
+        align-items: center;
+    }
+
+    .about-image img {
+        width: 100%;
+        border-radius: var(--border-radius);
+    }
+
+    @media (max-width: 768px) {
+        .split-layout {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>

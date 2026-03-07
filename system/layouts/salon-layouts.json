@@ -1,0 +1,20 @@
+{
+    "layout_1": [
+        "navbar-basic",
+        "hero-centered",
+        "about-simple",
+        "services-3-grid",
+        "reviews-cards",
+        "cta-booking",
+        "footer-simple"
+    ],
+    "layout_2": [
+        "navbar-mobile",
+        "hero-image-bg",
+        "services-6-grid",
+        "gallery-grid",
+        "reviews-slider",
+        "cta-banner",
+        "footer-columns"
+    ]
+}
