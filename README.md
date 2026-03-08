@@ -7,12 +7,19 @@ Live Portfolio: [pranavrai207.github.io/client-pitches](https://pranavrai207.git
 | Folder/File | Purpose |
 |-------------|---------|
 | `main.py` | Central Orchestrator — run all commands from here |
-| `scripts/` | Implementation logic (Scraper, Filter, Deploy, etc.) |
 | `config/` | Central configuration (`config.py`) |
 | `data/` | Lead databases (`.xlsx` files) |
 | `logs/` | System operation logs (`scraper.log`) |
 | `outputs/` | Generated reports and transient outputs |
 | `clients/` | The Deal Hub — Premium HTML/CSS client websites |
+| `scripts/` | Implementation logic and core modules |
+| &nbsp;&nbsp;├── `analytics/` | Lead scoring and data analysis |
+| &nbsp;&nbsp;├── `database/` | Data storage and retrieval |
+| &nbsp;&nbsp;├── `deployment/` | GitHub Pages deployment |
+| &nbsp;&nbsp;├── `generation/` | AI content and image generation |
+| &nbsp;&nbsp;├── `processing/` | Data filtering and refinement |
+| &nbsp;&nbsp;├── `scraping/` | Google Maps data extraction |
+| &nbsp;&nbsp;└── `utils/` | Shared helper functions |
 | `system/` | Theme Engine — generators, tokens, components, layouts |
 | `ai_memory/` | Design standards and pitch strategy documents |
 | `final_audit.py` | Automated quality audit script |
@@ -67,6 +74,13 @@ Every client website is visually unique — no two sites look the same.
 | `tokens/premium-restaurant.css`| Design tokens for restaurant category |
 | `components/` | Reusable section templates (hero, nav, footer, etc.) |
 | `layouts/` | Page layout definitions for single & multi-page sites |
+| `pages/` | Page-level content structures |
+
+### 🆕 Today's Updates & New Features
+- **Modularized Scripts:** We moved from flat scripts to a deeply modular architecture (`analytics`, `processing`, `scraping`, `generation`) for much easier management and extensibility.
+- **Copy Client Support:** You can now exact-copy full websites from one brand to another and automatically update the branding details (e.g., from ShellBeacon to Mr. K Ramyun).
+- **Advanced Automated Imaging:** AI image generation logic (`tracked_images.json`) now prevents duplicates and precisely maps specific keywords back to the generated assets.
+- **Multi-page Architecture:** Robust generation of deeply nested Multi-Page Architecture (MPA) sites with interconnected Home, About, Menu, and Review sections.
 
 ### What Makes Each Site Unique
 - 🎨 **Custom Color Palettes** — No two clients share the same palette
