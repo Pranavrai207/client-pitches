@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafe Diaries | Finest Italian Cuisine in Amar Colony</title>
+    <meta name="description"
+        content="Experience authentic Italian dining at Cafe Diaries. Rated 4.8 stars with over 300+ reviews. Visit us in New Delhi for the best pasta and pizza.">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <nav>
+        <div class="logo">CAFE DIARIES</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="menu-toggle" id="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <script>
+        const menuToggle = document.getElementById('mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu on link click
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
+
+    <section class="hero" id="home">
+        <h1>Authentic Italian Excellence</h1>
+        <p>Discover the rich flavors of Italy in the heart of New Delhi. A premium dining experience crafted with
+            passion.</p>
+        <a href="https://wa.me/919953906393" class="cta-button">Book a Table</a>
+    </section>
+
+    <section class="stats">
+        <div class="stat-item">
+            <h3>4.8</h3>
+            <p>Google Rating</p>
+        </div>
+        <div class="stat-item">
+            <h3>344</h3>
+            <p>Happy Reviews</p>
+        </div>
+        <div class="stat-item">
+            <h3>100%</h3>
+            <p>Authentic Italian</p>
+        </div>
+    </section>
+
+    <section class="menu" id="menu">
+        <div class="section-header">
+            <h2>Our Signature Delights</h2>
+            <p>Handcrafted dishes made with imported Italian ingredients</p>
+        </div>
+        <div class="menu-grid">
+            <div class="menu-card">
+                <img src="assets/images/pasta.png" alt="Signature Pasta">
+                <div class="card-content">
+                    <h3>Artisan Pasta</h3>
+                    <p>Homemade fettuccine with slow-cooked ragu and aged parmesan.</p>
+                </div>
+            </div>
+            <div class="menu-card">
+                <img src="assets/images/pizza.png" alt="Wood-fired Pizza">
+                <div class="card-content">
+                    <h3>Wood-fired Pizza</h3>
+                    <p>Authentic Neapolitan style with buffalo mozzarella and San Marzano tomatoes.</p>
+                </div>
+            </div>
+            <div class="menu-card">
+                <img src="assets/images/tiramisu.png" alt="Classic Tiramisu">
+                <div class="card-content">
+                    <h3>Classic Tiramisu</h3>
+                    <p>Traditional Italian dessert layered with espresso-soaked ladyfingers and mascarpone.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-content">
+            <h2>Visit Us Today</h2>
+            <p>First & Second Floor, C 32, Block C, Amar Colony, Market, New Delhi, Delhi 110024</p>
+            <p>Phone: 099539 06393</p>
+            <br>
+            <a href="https://www.google.com/maps/place/Cafe+Diaries/@28.5629091,77.2443434,16z" class="cta-button">Get
+                Directions</a>
+        </div>
+        <p>&copy; 2026 Cafe Diaries. All Rights Reserved.</p>
+    </footer>
+</body>
+
+</html>

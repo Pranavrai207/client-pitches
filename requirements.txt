@@ -2,3 +2,5 @@ playwright
 pandas
 openpyxl
 Pillow
+rich
+tqdm

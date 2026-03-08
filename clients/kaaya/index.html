@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaaya | Premium Beauty Parlour Lajpat Nagar</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <header>
+        <a href="index.html" class="brand">KAAYA</a>
+        <nav>
+            <ul id="nav-list">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="menu-toggle" id="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <a href="contact.html" class="btn btn-primary">Book Now</a>
+    </header>
+
+    <script>
+        const menuToggle = document.getElementById('mobile-menu');
+        const navList = document.querySelector('nav');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            navList.classList.toggle('active');
+        });
+    </script>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Redefine Your Beauty</h1>
+            <p>Elevate your style with Delhi's most trusted beauty sanctuary.</p>
+            <a href="services.html" class="btn btn-primary">Our Services</a>
+        </div>
+    </section>
+
+    <section class="featured">
+        <div class="section-title">
+            <h2>Experience Luxury</h2>
+            <p>Our commitment to excellence makes Kaaya the top choice for beauty and wellness.</p>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <img src="assets/images/hair.png" alt="Hair Styling">
+                <h3>Hair Artistry</h3>
+                <p>From precision cuts to vibrant coloring, our stylists bring your vision to life.</p>
+            </div>
+            <div class="card">
+                <img src="assets/images/skin.png" alt="Skin Care">
+                <h3>Skin Rituals</h3>
+                <p>Revitalize your glow with our expert facial and skin treatments.</p>
+            </div>
+            <div class="card">
+                <img src="assets/images/interior.png" alt="Salon Interior">
+                <h3>Elegant Space</h3>
+                <p>Relax in our modern, serene environment designed for your comfort.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="reviews" style="background: var(--secondary); text-align: center;">
+        <div class="section-title">
+            <h2>What Our Clients Say</h2>
+        </div>
+        <p style="font-size: 2rem; color: var(--primary); margin-bottom: 1rem;">⭐⭐⭐⭐⭐ 4.9/5</p>
+        <p style="font-style: italic; max-width: 800px; margin: 0 auto;">"Kaaya is the only place I trust with my hair
+            and skin. The staff is professional and the atmosphere is incredibly relaxing. Highly recommended!"</p>
+        <p style="margin-top: 2rem; font-weight: bold;">— Over 220+ verified reviews</p>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <h3>KAAYA</h3>
+                <p>Your sanctuary for beauty and elegance in Lajpat Nagar.</p>
+            </div>
+            <div>
+                <h4>Explore</h4>
+                <p><a href="index.html">Home</a></p>
+                <p><a href="services.html">Services</a></p>
+                <p><a href="about.html">About</a></p>
+            </div>
+            <div>
+                <h4>Visit Us</h4>
+                <p>E-55, Central Market, Lajpat Nagar II, New Delhi</p>
+                <p>Call: 098739 70738</p>
+            </div>
+        </div>
+        <p>&copy; 2026 Kaaya Beauty Parlour. All Rights Reserved.</p>
+    </footer>
+</body>
+
+</html>

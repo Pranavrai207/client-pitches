@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | Kaaya Beauty Parlour</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .service-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .service-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .service-item h4 {
+            font-size: 1.4rem;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .price {
+            color: var(--primary);
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="index.html" class="brand">KAAYA</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="menu-toggle" id="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <a href="contact.html" class="btn btn-primary">Book Now</a>
+    </header>
+
+    <script>
+        const menuToggle = document.getElementById('mobile-menu');
+        const navList = document.querySelector('nav');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            navList.classList.toggle('active');
+        });
+    </script>
+
+    <section class="section-title">
+        <h2>Expert Services</h2>
+        <p>Discover our range of premium beauty and wellness treatments.</p>
+    </section>
+
+    <section class="service-list">
+        <h3>Hair Services</h3>
+        <div class="service-item">
+            <div>
+                <h4>Signature Haircut</h4>
+                <p>Professional cut and styling</p>
+            </div>
+            <div class="price">₹1,200+</div>
+        </div>
+        <div class="service-item">
+            <div>
+                <h4>Luxury Hair Color</h4>
+                <p>Global color or highlights</p>
+            </div>
+            <div class="price">₹3,500+</div>
+        </div>
+        <div class="service-item">
+            <div>
+                <h4>Smooth Silk Treatment</h4>
+                <p>Keratin or Rebonding</p>
+            </div>
+            <div class="price">₹5,000+</div>
+        </div>
+
+        <h3 style="margin-top: 4rem;">Skin & Spa</h3>
+        <div class="service-item">
+            <div>
+                <h4>Radiance Facial</h4>
+                <p>Deep cleansing and hydration</p>
+            </div>
+            <div class="price">₹2,500+</div>
+        </div>
+        <div class="service-item">
+            <div>
+                <h4>Organic Glow Peel</h4>
+                <p>Dermalogica specialized peel</p>
+            </div>
+            <div class="price">₹4,000+</div>
+        </div>
+
+        <h3 style="margin-top: 4rem;">Make-up & Nails</h3>
+        <div class="service-item">
+            <div>
+                <h4>Bridal Make-up</h4>
+                <p>Standard and HD packages</p>
+            </div>
+            <div class="price">₹15,000+</div>
+        </div>
+        <div class="service-item">
+            <div>
+                <h4>Luxe Manicure</h4>
+                <p>Gel polish and art</p>
+            </div>
+            <div class="price">₹1,500+</div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <h3>KAAYA</h3>
+                <p>Your sanctuary for beauty and elegance in Lajpat Nagar.</p>
+            </div>
+            <div>
+                <h4>Visit Us</h4>
+                <p>E-55, Central Market, Lajpat Nagar II, New Delhi</p>
+                <p>Call: 098739 70738</p>
+            </div>
+        </div>
+        <p>&copy; 2026 Kaaya Beauty Parlour. All Rights Reserved.</p>
+    </footer>
+</body>
+
+</html>

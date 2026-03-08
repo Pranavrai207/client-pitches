@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Kaaya Beauty Parlour</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <header>
+        <a href="index.html" class="brand">KAAYA</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="menu-toggle" id="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <a href="contact.html" class="btn btn-primary">Book Now</a>
+    </header>
+
+    <script>
+        const menuToggle = document.getElementById('mobile-menu');
+        const navList = document.querySelector('nav');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            navList.classList.toggle('active');
+        });
+    </script>
+
+    <section class="section-title" style="padding-bottom: 2rem;">
+        <h2>The Kaaya Story</h2>
+        <p>A legacy of beauty, grace, and professional excellence.</p>
+    </section>
+
+    <section class="flex-responsive" style="padding-top: 0;">
+        <div style="flex: 1;">
+            <img src="assets/images/interior.png" alt="Our Salon" style="width: 100%; border-radius: 10px;">
+        </div>
+        <div style="flex: 1;">
+            <h3 style="font-size: 2.5rem; margin-bottom: 1.5rem;">Beauty Reimagined</h3>
+            <p>Founded on the principles of luxury and personalized care, Kaaya has been a staple of the Lajpat Nagar
+                community for years. We believe that beauty is not just about the surface, but about how you feel
+                inside.</p>
+            <br>
+            <p>Our team of expert stylists, dermatologists, and therapists are dedicated to providing a world-class
+                experience. We use only premium products and the latest techniques to ensure you leave feeling like the
+                best version of yourself.</p>
+            <br>
+            <p>Whether you're preparing for a special occasion or just treating yourself to some well-deserved
+                pampering, Kaaya is your sanctuary for elegance.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <h3>KAAYA</h3>
+                <p>Your sanctuary for beauty and elegance in Lajpat Nagar.</p>
+            </div>
+            <div>
+                <h4>Visit Us</h4>
+                <p>E-55, Central Market, Lajpat Nagar II, New Delhi</p>
+                <p>Call: 098739 70738</p>
+            </div>
+        </div>
+        <p>&copy; 2026 Kaaya Beauty Parlour. All Rights Reserved.</p>
+    </footer>
+</body>
+
+</html>

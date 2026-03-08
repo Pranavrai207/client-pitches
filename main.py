@@ -18,13 +18,16 @@ def run_script(script_path, script_args=None):
     except subprocess.CalledProcessError as e:
         print(f"❌ Error in {os.path.basename(script_path)}: {e}")
         return False
+    except KeyboardInterrupt:
+        print(f"\n⚠️ Process interrupted by user.")
+        return False
     except Exception as e:
         print(f"❌ Unexpected error: {e}")
         return False
 
 def main():
     parser = argparse.ArgumentParser(description="Lead Gen System Orchestrator (10/10 Hybrid Structure)")
-    parser.add_argument("command", choices=["scrape", "filter", "pitch", "report", "deploy", "optimize", "all"], 
+    parser.add_argument("command", choices=["scrape", "filter", "pitch", "report", "deploy", "optimize", "dashboard", "all"], 
                         help="Command to execute")
     parser.add_argument("--query", "-q", help="Search query (e.g. 'cafes in Delhi')")
     parser.add_argument("--max", "-m", help="Maximum results to collect")
@@ -61,6 +64,9 @@ def main():
 
     elif args.command == "report":
         run_script(os.path.join(scripts_dir, "generation", "generate_report.py"))
+
+    elif args.command == "dashboard":
+        run_script(os.path.join(scripts_dir, "analytics", "dashboard_gen.py"))
 
     elif args.command == "optimize":
         target = args.dir or (f"clients/{args.client}/assets/images" if args.client else None)

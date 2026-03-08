@@ -15,11 +15,25 @@ import logging
 import random
 import os
 import sys
+import time
+from datetime import datetime
+from typing import Optional, List, Dict, Any, Tuple
+import pandas as pd
+from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeoutError, Playwright, Browser, BrowserContext, Page, Locator
+from rich.progress import Progress, SpinnerColumn, TextColumn, BarColumn, MofNCompleteColumn, TimeElapsedColumn
+from rich.logging import RichHandler
+from rich.console import Console
+
 # Add project root to sys.path
 root_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 if root_dir not in sys.path:
     sys.path.append(root_dir)
 from config import config
+
+# Import the database manager
+from scripts.database import db_manager
+
+console = Console()
 
 # ─────────────────────────────────────────────────────────────────────────────
 #  LOGGING SETUP
@@ -28,13 +42,13 @@ from config import config
 def setup_logging() -> logging.Logger:
     """Configure root logger with console + optional file handler."""
     log_level = getattr(logging, config.LOG_LEVEL.upper(), logging.INFO)
-    fmt = "%(asctime)s [%(levelname)s] %(message)s"
-    handlers: list[logging.Handler] = [logging.StreamHandler(sys.stdout)]
+    fmt = "%(message)s"
+    handlers: list[logging.Handler] = [RichHandler(rich_tracebacks=True, console=console, show_path=False)]
 
     if config.LOG_FILE:
         handlers.append(logging.FileHandler(config.LOG_FILE, encoding="utf-8"))
 
-    logging.basicConfig(level=log_level, format=fmt, handlers=handlers)
+    logging.basicConfig(level=log_level, format=fmt, datefmt="[%X]", handlers=handlers)
     return logging.getLogger(__name__)
 
 
@@ -161,7 +175,7 @@ def perform_search(page: Page, query: str) -> bool:
                 logger.info("Results panel loaded (selector: %s)", sel)
                 feed_found = True
                 break
-            except PlaywrightTimeout:
+            except PlaywrightTimeoutError:
                 logger.debug("Selector not found: %s — trying next …", sel)
                 continue
 
@@ -171,7 +185,7 @@ def perform_search(page: Page, query: str) -> bool:
 
         return True
 
-    except PlaywrightTimeout:
+    except PlaywrightTimeoutError:
         logger.error("Page navigation timed out (45s).")
         return False
     except Exception as exc:
@@ -291,57 +305,69 @@ def extract_business_data(page: Page, max_results: int) -> list[dict]:
     scroll_cycles = 0
     max_scroll_cycles = getattr(config, 'MAX_SCROLL_CYCLES', 25)  # from config
 
-    while len(results) < max_results and scroll_cycles < max_scroll_cycles:
-        scroll_cycles += 1
+    with Progress(
+        SpinnerColumn(),
+        TextColumn("[progress.description]{task.description}"),
+        BarColumn(),
+        MofNCompleteColumn(),
+        TimeElapsedColumn(),
+        console=console,
+        transient=False,
+    ) as progress:
+        task = progress.add_task("[cyan]Extracting leads...", total=max_results)
 
-        # Get all currently loaded listing cards
-        cards = page.locator('div[role="feed"] > div > div[jsaction]').all()
-        logger.info("Cycle %d: found %d cards, collected %d so far",
-                    scroll_cycles, len(cards), len(results))
+        while len(results) < max_results and scroll_cycles < max_scroll_cycles:
+            scroll_cycles += 1
 
-        for card in cards:
-            if len(results) >= max_results:
-                break
+            # Get all currently loaded listing cards
+            cards = page.locator('div[role="feed"] > div > div[jsaction]').all()
+            logger.info("Cycle %d: found %d cards, collected %d so far",
+                        scroll_cycles, len(cards), len(results))
 
-            business = _extract_single_card(page, card)
-            if business is None:
-                continue
+            for card in cards:
+                if len(results) >= max_results:
+                    break
 
-            # ── Local business filter (skip chains & malls) ──────────────
-            if not _is_local_business(
-                business['Name'],
-                business.get('Total Reviews') if isinstance(business.get('Total Reviews'), int) else None
-            ):
-                continue
-
-            # ── Personal Website Filter ──────────────────────────────────
-            # Skip if business has a personal website (not a platform link)
-            website = business.get('Website', 'N/A')
-            if website != "N/A" and not _is_platform_website(website):
-                logger.debug("Personal website filtered out: %s (%s)", business["Name"], website)
-                continue
-
-            # ── Phone Number Requirement Filter ──────────────────────────
-            # Skip if business has no phone number (if required in config)
-            if getattr(config, 'REQUIRE_PHONE_NUMBER', False):
-                phone = business.get('Phone', 'N/A')
-                if not phone or phone == "N/A":
-                    logger.debug("No phone number found — skipping: %s", business["Name"])
+                business = _extract_single_card(page, card)
+                if business is None:
                     continue
 
-            # Deduplication check
-            dedup_key = f"{business['Name'].lower()}|{business['Address'].lower()}"
-            if dedup_key in seen_keys:
-                logger.debug("Duplicate skipped: %s", business["Name"])
-                continue
+                # ── Local business filter (skip chains & malls) ──────────────
+                if not _is_local_business(
+                    business['Name'],
+                    business.get('Total Reviews') if isinstance(business.get('Total Reviews'), int) else None
+                ):
+                    continue
 
-            seen_keys.add(dedup_key)
-            results.append(business)
-            logger.info("[%d/%d] Added: %s", len(results), max_results, business["Name"])
+                # ── Personal Website Filter ──────────────────────────────────
+                # Skip if business has a personal website (not a platform link)
+                website = business.get('Website', 'N/A')
+                if website != "N/A" and not _is_platform_website(website):
+                    logger.debug("Personal website filtered out: %s (%s)", business["Name"], website)
+                    continue
 
-        if len(results) < max_results:
-            scroll_results(page)  # load more listings
-            human_delay(2, 4)
+                # ── Phone Number Requirement Filter ──────────────────────────
+                # Skip if business has no phone number (if required in config)
+                if getattr(config, 'REQUIRE_PHONE_NUMBER', False):
+                    phone = business.get('Phone', 'N/A')
+                    if not phone or phone == "N/A":
+                        logger.debug("No phone number found — skipping: %s", business["Name"])
+                        continue
+
+                # Deduplication check
+                dedup_key = f"{business['Name'].lower()}|{business['Address'].lower()}"
+                if dedup_key in seen_keys:
+                    logger.debug("Duplicate skipped: %s", business["Name"])
+                    continue
+
+                seen_keys.add(dedup_key)
+                results.append(business)
+                progress.update(task, advance=1, description=f"[cyan]Added: {business['Name'][:20]}")
+                logger.info("[%d/%d] Added: %s", len(results), max_results, business["Name"])
+
+            if len(results) < max_results:
+                scroll_results(page)  # load more listings
+                human_delay(2, 4)
 
     logger.info("Extraction complete. Total unique records: %d", len(results))
     return results
@@ -541,7 +567,7 @@ def _extract_single_card(page: Page, card) -> Optional[dict]:
             "Priority"      : priority,
         }
 
-    except PlaywrightTimeout:
+    except PlaywrightTimeoutError:
         logger.warning("Timeout opening listing card — skipping.")
         return None
     except Exception as exc:
@@ -767,9 +793,20 @@ def main() -> None:
             for _, row in df_existing.iterrows():
                 key = f"{str(row.get('Name', '')).lower()}|{str(row.get('Address', '')).lower()}"
                 seen_global.add(key)
-            logger.info("Found %d existing leads. These will be skipped.", len(seen_global))
+            logger.info("Found %d existing leads from Excel. These will be skipped.", len(df_existing))
         except Exception as e:
-            logger.warning("Failed to load existing leads: %s", e)
+            logger.warning("Failed to load existing leads from Excel: %s", e)
+            
+    # Load existing leads from SQLite database
+    try:
+        db_leads = db_manager.get_all_leads()
+        for lead in db_leads:
+            # We map address to location in DB
+            key = f"{str(lead.get('name', '')).lower()}|{str(lead.get('location', '')).lower()}"
+            seen_global.add(key)
+        logger.info("Loaded %d existing leads from Database. Total unique skipped: %d", len(db_leads), len(seen_global))
+    except Exception as e:
+        logger.warning("Failed to load existing leads from database: %s", e)
 
     with sync_playwright() as playwright:
         browser, context, page = initialize_browser(playwright)
@@ -827,8 +864,22 @@ def main() -> None:
                          cn, name_freq[cn])
 
     if all_records:
+        # Save to database
+        db_added = 0
+        for record in all_records:
+            added = db_manager.add_lead(
+                name=record.get("Name", "N/A"),
+                phone=record.get("Phone", "N/A"),
+                url=record.get("Website", "N/A"),
+                business_type=record.get("Category", "N/A"),
+                location=record.get("Address", "N/A")
+            )
+            if added:
+                db_added += 1
+        logger.info(f"Added {db_added} unique records to the database.")
+        
         save_to_excel(all_records, args.output)
-        print(f"\n🎯 Done! {len(all_records)} leads saved to '{args.output}'")
+        print(f"\n🎯 Done! {len(all_records)} leads saved to '{args.output}' and {db_added} to Database.")
     else:
         logger.warning("No records collected. Excel file was not created.")
         print("\n⚠️  No records collected. Please check your internet connection or selectors.")

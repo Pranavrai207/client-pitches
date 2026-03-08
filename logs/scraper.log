@@ -1491,3 +1491,368 @@
 2026-02-28 23:05:28,314 [INFO] Browser closed.
 2026-02-28 23:05:28,357 [INFO] Saving 1193 records to delhi_leads.xlsx …
 2026-02-28 23:05:29,060 [INFO] ✅ Excel saved: delhi_leads.xlsx
+2026-03-08 17:07:19,423 [INFO] Launching Chromium browser …
+2026-03-08 17:07:20,613 [INFO] Browser ready.
+2026-03-08 17:07:20,613 [INFO] ════════════════════════════════════════════════════════════
+2026-03-08 17:07:20,613 [INFO] Starting query: 'gyms in South Delhi'  (max 5 per query, 0 total so far)
+2026-03-08 17:07:20,614 [INFO] ════════════════════════════════════════════════════════════
+2026-03-08 17:07:20,614 [INFO] Navigating to: https://www.google.com/maps/search/gyms+in+South+Delhi
+2026-03-08 17:07:25,726 [INFO] Results panel loaded (selector: div[role="feed"])
+2026-03-08 17:07:25,727 [INFO] Extracting business data (target: 5) …
+2026-03-08 17:07:25,735 [INFO] Cycle 1: found 7 cards, collected 0 so far
+2026-03-08 17:07:30,786 [ERROR] Unexpected error: name 'PlaywrightTimeout' is not defined
+Traceback (most recent call last):
+  File "C:\Users\conta\Client-pitches\client-pitches\scripts\scraping\scraper.py", line 417, in _extract_single_card
+    card.scroll_into_view_if_needed(timeout=5_000)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\conta\Client-pitches\.venv\Lib\site-packages\playwright\sync_api\_generated.py", line 17550, in scroll_into_view_if_needed
+    self._sync(self._impl_obj.scroll_into_view_if_needed(timeout=timeout))
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\conta\Client-pitches\.venv\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "C:\Users\conta\Client-pitches\.venv\Lib\site-packages\playwright\_impl\_locator.py", line 581, in scroll_into_view_if_needed
+    return await self._with_element(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+    )
+    ^
+  File "C:\Users\conta\Client-pitches\.venv\Lib\site-packages\playwright\_impl\_locator.py", line 117, in _with_element
+    return await task(
+           ^^^^^^^^^^^
+    ...<2 lines>...
+    )
+    ^
+  File "C:\Users\conta\Client-pitches\.venv\Lib\site-packages\playwright\_impl\_element_handle.py", line 113, in scroll_into_view_if_needed
+    await self._channel.send(
+        "scrollIntoViewIfNeeded", self._frame._timeout, locals_to_params(locals())
+    )
+  File "C:\Users\conta\Client-pitches\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\conta\Client-pitches\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Locator.scroll_into_view_if_needed: Timeout 4991ms exceeded.
+Call log:
+  - attempting scroll into view action
+    2 × waiting for element to be stable
+      - element is not visible
+    - retrying scroll into view action
+    - waiting 20ms
+    2 × waiting for element to be stable
+      - element is not visible
+    - retrying scroll into view action
+      - waiting 100ms
+    9 × waiting for element to be stable
+      - element is not visible
+    - retrying scroll into view action
+      - waiting 500ms
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\conta\Client-pitches\client-pitches\scripts\scraping\scraper.py", line 793, in main
+    records = extract_business_data(page, args.max)
+  File "C:\Users\conta\Client-pitches\client-pitches\scripts\scraping\scraper.py", line 310, in extract_business_data
+    business = _extract_single_card(page, card)
+  File "C:\Users\conta\Client-pitches\client-pitches\scripts\scraping\scraper.py", line 548, in _extract_single_card
+    except PlaywrightTimeout:
+           ^^^^^^^^^^^^^^^^^
+NameError: name 'PlaywrightTimeout' is not defined. Did you mean: 'PlaywrightTimeoutError'?
+2026-03-08 17:07:30,913 [INFO] Browser closed.
+2026-03-08 17:07:30,931 [WARNING] No records collected. Excel file was not created.
+2026-03-08 17:07:49,903 [INFO] Launching Chromium browser …
+2026-03-08 17:07:50,188 [INFO] Browser ready.
+2026-03-08 17:07:50,188 [INFO] ════════════════════════════════════════════════════════════
+2026-03-08 17:07:50,188 [INFO] Starting query: 'gyms in South Delhi'  (max 5 per query, 0 total so far)
+2026-03-08 17:07:50,189 [INFO] ════════════════════════════════════════════════════════════
+2026-03-08 17:07:50,189 [INFO] Navigating to: https://www.google.com/maps/search/gyms+in+South+Delhi
+2026-03-08 17:07:54,883 [INFO] Results panel loaded (selector: div[role="feed"])
+2026-03-08 17:07:54,883 [INFO] Extracting business data (target: 5) …
+2026-03-08 17:07:54,891 [INFO] Cycle 1: found 7 cards, collected 0 so far
+2026-03-08 17:07:59,932 [ERROR] Unexpected error: name 'PlaywrightTimeout' is not defined
+Traceback (most recent call last):
+  File "C:\Users\conta\Client-pitches\client-pitches\scripts\scraping\scraper.py", line 417, in _extract_single_card
+    card.scroll_into_view_if_needed(timeout=5_000)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\conta\Client-pitches\.venv\Lib\site-packages\playwright\sync_api\_generated.py", line 17550, in scroll_into_view_if_needed
+    self._sync(self._impl_obj.scroll_into_view_if_needed(timeout=timeout))
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\conta\Client-pitches\.venv\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "C:\Users\conta\Client-pitches\.venv\Lib\site-packages\playwright\_impl\_locator.py", line 581, in scroll_into_view_if_needed
+    return await self._with_element(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+    )
+    ^
+  File "C:\Users\conta\Client-pitches\.venv\Lib\site-packages\playwright\_impl\_locator.py", line 117, in _with_element
+    return await task(
+           ^^^^^^^^^^^
+    ...<2 lines>...
+    )
+    ^
+  File "C:\Users\conta\Client-pitches\.venv\Lib\site-packages\playwright\_impl\_element_handle.py", line 113, in scroll_into_view_if_needed
+    await self._channel.send(
+        "scrollIntoViewIfNeeded", self._frame._timeout, locals_to_params(locals())
+    )
+  File "C:\Users\conta\Client-pitches\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\conta\Client-pitches\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Locator.scroll_into_view_if_needed: Timeout 4989ms exceeded.
+Call log:
+  - attempting scroll into view action
+    2 × waiting for element to be stable
+      - element is not visible
+    - retrying scroll into view action
+    - waiting 20ms
+    2 × waiting for element to be stable
+      - element is not visible
+    - retrying scroll into view action
+      - waiting 100ms
+    10 × waiting for element to be stable
+       - element is not visible
+     - retrying scroll into view action
+       - waiting 500ms
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\conta\Client-pitches\client-pitches\scripts\scraping\scraper.py", line 793, in main
+    records = extract_business_data(page, args.max)
+  File "C:\Users\conta\Client-pitches\client-pitches\scripts\scraping\scraper.py", line 310, in extract_business_data
+    business = _extract_single_card(page, card)
+  File "C:\Users\conta\Client-pitches\client-pitches\scripts\scraping\scraper.py", line 548, in _extract_single_card
+    except PlaywrightTimeout:
+           ^^^^^^^^^^^^^^^^^
+NameError: name 'PlaywrightTimeout' is not defined. Did you mean: 'PlaywrightTimeoutError'?
+2026-03-08 17:08:00,059 [INFO] Browser closed.
+2026-03-08 17:08:00,073 [WARNING] No records collected. Excel file was not created.
+2026-03-08 17:08:39,524 [INFO] Launching Chromium browser …
+2026-03-08 17:08:39,813 [INFO] Browser ready.
+2026-03-08 17:08:39,813 [INFO] ════════════════════════════════════════════════════════════
+2026-03-08 17:08:39,813 [INFO] Starting query: 'gyms in South Delhi'  (max 5 per query, 0 total so far)
+2026-03-08 17:08:39,813 [INFO] ════════════════════════════════════════════════════════════
+2026-03-08 17:08:39,813 [INFO] Navigating to: https://www.google.com/maps/search/gyms+in+South+Delhi
+2026-03-08 17:08:44,048 [INFO] Results panel loaded (selector: div[role="feed"])
+2026-03-08 17:08:44,048 [INFO] Extracting business data (target: 5) …
+2026-03-08 17:08:44,056 [INFO] Cycle 1: found 7 cards, collected 0 so far
+2026-03-08 17:08:49,109 [ERROR] Unexpected error: name 'PlaywrightTimeout' is not defined
+Traceback (most recent call last):
+  File "C:\Users\conta\Client-pitches\client-pitches\scripts\scraping\scraper.py", line 417, in _extract_single_card
+    card.scroll_into_view_if_needed(timeout=5_000)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\conta\Client-pitches\.venv\Lib\site-packages\playwright\sync_api\_generated.py", line 17550, in scroll_into_view_if_needed
+    self._sync(self._impl_obj.scroll_into_view_if_needed(timeout=timeout))
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\conta\Client-pitches\.venv\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "C:\Users\conta\Client-pitches\.venv\Lib\site-packages\playwright\_impl\_locator.py", line 581, in scroll_into_view_if_needed
+    return await self._with_element(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+    )
+    ^
+  File "C:\Users\conta\Client-pitches\.venv\Lib\site-packages\playwright\_impl\_locator.py", line 117, in _with_element
+    return await task(
+           ^^^^^^^^^^^
+    ...<2 lines>...
+    )
+    ^
+  File "C:\Users\conta\Client-pitches\.venv\Lib\site-packages\playwright\_impl\_element_handle.py", line 113, in scroll_into_view_if_needed
+    await self._channel.send(
+        "scrollIntoViewIfNeeded", self._frame._timeout, locals_to_params(locals())
+    )
+  File "C:\Users\conta\Client-pitches\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\conta\Client-pitches\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Locator.scroll_into_view_if_needed: Timeout 4995ms exceeded.
+Call log:
+  - attempting scroll into view action
+    2 × waiting for element to be stable
+      - element is not visible
+    - retrying scroll into view action
+    - waiting 20ms
+    2 × waiting for element to be stable
+      - element is not visible
+    - retrying scroll into view action
+      - waiting 100ms
+    10 × waiting for element to be stable
+       - element is not visible
+     - retrying scroll into view action
+       - waiting 500ms
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\conta\Client-pitches\client-pitches\scripts\scraping\scraper.py", line 793, in main
+    records = extract_business_data(page, args.max)
+  File "C:\Users\conta\Client-pitches\client-pitches\scripts\scraping\scraper.py", line 310, in extract_business_data
+    business = _extract_single_card(page, card)
+  File "C:\Users\conta\Client-pitches\client-pitches\scripts\scraping\scraper.py", line 548, in _extract_single_card
+    except PlaywrightTimeout:
+           ^^^^^^^^^^^^^^^^^
+NameError: name 'PlaywrightTimeout' is not defined. Did you mean: 'PlaywrightTimeoutError'?
+2026-03-08 17:08:49,286 [INFO] Browser closed.
+2026-03-08 17:08:49,301 [WARNING] No records collected. Excel file was not created.
+2026-03-08 17:10:49,325 [INFO] Launching Chromium browser …
+2026-03-08 17:10:49,606 [INFO] Browser ready.
+2026-03-08 17:10:49,607 [INFO] ════════════════════════════════════════════════════════════
+2026-03-08 17:10:49,607 [INFO] Starting query: 'gyms in South Delhi'  (max 5 per query, 0 total so far)
+2026-03-08 17:10:49,607 [INFO] ════════════════════════════════════════════════════════════
+2026-03-08 17:10:49,607 [INFO] Navigating to: https://www.google.com/maps/search/gyms+in+South+Delhi
+2026-03-08 17:10:53,669 [INFO] Results panel loaded (selector: div[role="feed"])
+2026-03-08 17:10:53,669 [INFO] Extracting business data (target: 5) …
+2026-03-08 17:10:53,678 [INFO] Cycle 1: found 7 cards, collected 0 so far
+2026-03-08 17:10:58,719 [WARNING] Timeout opening listing card — skipping.
+2026-03-08 17:11:10,587 [INFO] [1/5] Added: Dronacharya The Gym
+2026-03-08 17:11:20,939 [INFO] Scrolling results panel …
+2026-03-08 17:11:46,817 [INFO] Cycle 2: found 47 cards, collected 1 so far
+2026-03-08 17:11:51,859 [WARNING] Timeout opening listing card — skipping.
+2026-03-08 17:12:12,960 [INFO] [2/5] Added: Fibre Fitness Factory
+2026-03-08 17:12:20,374 [INFO] [3/5] Added: Pro Ultimate Gym - Saket, New Delhi
+2026-03-08 17:12:35,103 [INFO] [4/5] Added: I Lift Fitness
+2026-03-08 17:12:42,816 [INFO] [5/5] Added: The Fitness Gurukul
+2026-03-08 17:12:42,816 [INFO] Extraction complete. Total unique records: 5
+2026-03-08 17:12:42,816 [INFO] Query done. Cumulative unique records: 5
+2026-03-08 17:12:46,802 [INFO] Browser closed.
+2026-03-08 17:13:37,647 [INFO] Launching Chromium browser …
+2026-03-08 17:13:37,931 [INFO] Browser ready.
+2026-03-08 17:13:37,931 [INFO] ════════════════════════════════════════════════════════════
+2026-03-08 17:13:37,931 [INFO] Starting query: 'gyms in South Delhi'  (max 5 per query, 0 total so far)
+2026-03-08 17:13:37,932 [INFO] ════════════════════════════════════════════════════════════
+2026-03-08 17:13:37,932 [INFO] Navigating to: https://www.google.com/maps/search/gyms+in+South+Delhi
+2026-03-08 17:13:43,073 [INFO] Results panel loaded (selector: div[role="feed"])
+2026-03-08 17:13:43,074 [INFO] Extracting business data (target: 5) …
+2026-03-08 17:13:43,081 [INFO] Cycle 1: found 7 cards, collected 0 so far
+2026-03-08 17:13:48,125 [WARNING] Timeout opening listing card — skipping.
+2026-03-08 17:13:58,972 [INFO] [1/5] Added: Dronacharya The Gym
+2026-03-08 17:14:09,379 [INFO] Scrolling results panel …
+2026-03-08 17:14:35,106 [INFO] Cycle 2: found 47 cards, collected 1 so far
+2026-03-08 17:14:40,144 [WARNING] Timeout opening listing card — skipping.
+2026-03-08 17:15:06,019 [INFO] [2/5] Added: Fibre Fitness Factory
+2026-03-08 17:15:08,890 [INFO] [3/5] Added: Pro Ultimate Gym - Saket, New Delhi
+2026-03-08 17:15:26,759 [INFO] [4/5] Added: I Lift Fitness
+2026-03-08 17:15:38,367 [INFO] [5/5] Added: The Fitness Gurukul
+2026-03-08 17:15:38,367 [INFO] Extraction complete. Total unique records: 5
+2026-03-08 17:15:38,367 [INFO] Query done. Cumulative unique records: 5
+2026-03-08 17:15:42,449 [INFO] Browser closed.
+2026-03-08 17:15:42,489 [INFO] Saving 5 total unique records to data/delhi_leads.xlsx …
+2026-03-08 17:15:42,853 [INFO] ✅ Excel saved: data/delhi_leads.xlsx
+2026-03-08 17:17:05,726 [INFO] Loading existing leads from data/delhi_leads.xlsx for deduplication …
+2026-03-08 17:17:05,872 [INFO] Found 5 existing leads. These will be skipped.
+2026-03-08 17:17:06,308 [INFO] Launching Chromium browser …
+2026-03-08 17:17:06,581 [INFO] Browser ready.
+2026-03-08 17:17:06,582 [INFO] ════════════════════════════════════════════════════════════
+2026-03-08 17:17:06,582 [INFO] Starting query: 'spa in South Delhi'  (max 50 per query, 0 total so far)
+2026-03-08 17:17:06,582 [INFO] ════════════════════════════════════════════════════════════
+2026-03-08 17:17:06,582 [INFO] Navigating to: https://www.google.com/maps/search/spa+in+South+Delhi
+2026-03-08 17:17:11,464 [INFO] Results panel loaded (selector: div[role="feed"])
+2026-03-08 17:17:11,464 [INFO] Extracting business data (target: 50) …
+2026-03-08 17:17:11,472 [INFO] Cycle 1: found 7 cards, collected 0 so far
+2026-03-08 17:17:16,510 [WARNING] Timeout opening listing card — skipping.
+2026-03-08 17:17:56,600 [INFO] Scrolling results panel …
+2026-03-08 17:18:39,702 [INFO] Cycle 2: found 41 cards, collected 0 so far
+2026-03-08 17:18:44,746 [WARNING] Timeout opening listing card — skipping.
+2026-03-08 17:20:28,282 [WARNING] Interrupted by user — saving collected data before exit …
+2026-03-08 17:20:58,733 [ERROR] Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2026-03-08 17:20:58,733 [ERROR] Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+Loading existing leads from data/delhi_leads.xlsx for deduplication …
+Found 5 existing leads. These will be skipped.
+Launching Chromium browser …
+Browser ready.
+════════════════════════════════════════════════════════════
+Starting query: 'gyms in South Delhi'  (max 50 per query, 0 total so far)
+════════════════════════════════════════════════════════════
+Navigating to: https://www.google.com/maps/search/gyms+in+South+Delhi
+Results panel loaded (selector: div[role="feed"])
+Extracting business data (target: 50) …
+Cycle 1: found 7 cards, collected 0 so far
+Timeout opening listing card — skipping.
+[1/50] Added: Dronacharya The Gym
+[2/50] Added: I Lift Fitness
+Scrolling results panel …
+Cycle 2: found 53 cards, collected 2 so far
+Timeout opening listing card — skipping.
+[3/50] Added: Fibre Fitness Factory
+[4/50] Added: Pro Ultimate Gym - Saket, New Delhi
+[5/50] Added: SK-27 GYM HAUZ KHAS VILLAGE
+[6/50] Added: BODY CULTURE FITNESS CENTRE
+[7/50] Added: The Fitness Gurukul
+[8/50] Added: The fitking fitness gym
+[9/50] Added: The Gladiator Gym
+[10/50] Added: UFS GYM
+[11/50] Added: Momentum Fitness Points
+[12/50] Added: D9 Fitness
+[13/50] Added: The Body Move Fitness
+[14/50] Added: Eden Fitness Gym
+[15/50] Added: Power Lift Gym
+[16/50] Added: Tiger fitness club
+[17/50] Added: Sweat Fitness gym
+[18/50] Added: GYM PARADISE
+[19/50] Added: Aesthetix Fitness
+[20/50] Added: Prime Fitness Gym
+[21/50] Added: Good Health Family Gym
+[22/50] Added: Step 2 Fitness - Shape Your Life
+[23/50] Added: THERAPY STUDIO (FITNESS)
+[24/50] Added: Absolute Fitness malviya nagar
+Scrolling results panel …
+Cycle 3: found 93 cards, collected 24 so far
+Timeout opening listing card — skipping.
+[25/50] Added: Body fit fitness centre
+[26/50] Added: Fitsoul Unisex Gym - The Best Gym In Sheikh Sarai
+[27/50] Added: O7 Fitness Gym
+[28/50] Added: The Workout Factory Gym
+[29/50] Added: Fitness Nation Gym
+[30/50] Added: BIG MUSCLE GYM
+[31/50] Added: SK 27 Gym Vasant Vihar
+[32/50] Added: BARBARIAN - The Grand Fitness
+[33/50] Added: PRO FITNESS GYM
+[34/50] Added: 24 FITNESS STUDIO
+[35/50] Added: The Health World Gym
+[36/50] Added: Flexi Fitness
+[37/50] Added: THE BIG GUNS ZONE FITNESS ( UNISEX GYM)
+[38/50] Added: Neue Life Fitness
+Scrolling results panel …
+Cycle 4: found 121 cards, collected 38 so far
+Timeout opening listing card — skipping.
+[39/50] Added: Fitness 365 gym
+[40/50] Added: Ultimate fitness gym
+[41/50] Added: Power Zone Gym
+[42/50] Added: Ripped Gym
+[43/50] Added: Fit Tribe Club
+[44/50] Added: Forever Fitness Gym
+[45/50] Added: Health Station Gym
+[46/50] Added: Multi Gym South Extension Part-1
+[47/50] Added: SFL GYM MALVIYA NAGAR - kick boxing and MMA GYM in malviya nagar
+[48/50] Added: Titan first fitness gym
+[49/50] Added: LIFE LINE GYM
+[50/50] Added: Big Muscle Gym
+Extraction complete. Total unique records: 50
+Query done. Cumulative unique records: 45
+Browser closed.
+Merged 45 new leads with existing data.
+Saving 50 total unique records to data/delhi_leads.xlsx …
+✅ Excel saved: data/delhi_leads.xlsx
