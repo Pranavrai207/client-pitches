@@ -4,25 +4,21 @@ A modular, production-ready system that scrapes Google Maps for local business l
 Live Portfolio: [pranavrai207.github.io/client-pitches](https://pranavrai207.github.io/client-pitches/clients/)
 
 ## 📁 Project Structure
+
 | Folder/File | Purpose |
 |-------------|---------|
-| `main.py` | Central Orchestrator — run all commands from here |
-| `config/` | Central configuration (`config.py`) |
-| `data/` | Lead databases (`.xlsx` files) |
-| `logs/` | System operation logs (`scraper.log`) |
-| `outputs/` | Generated reports and transient outputs |
-| `clients/` | The Deal Hub — Premium HTML/CSS client websites |
-| `scripts/` | Implementation logic and core modules |
-| &nbsp;&nbsp;├── `analytics/` | Lead scoring and data analysis |
-| &nbsp;&nbsp;├── `database/` | Data storage and retrieval |
-| &nbsp;&nbsp;├── `deployment/` | GitHub Pages deployment |
-| &nbsp;&nbsp;├── `generation/` | AI content and image generation |
-| &nbsp;&nbsp;├── `processing/` | Data filtering and refinement |
-| &nbsp;&nbsp;├── `scraping/` | Google Maps data extraction |
-| &nbsp;&nbsp;└── `utils/` | Shared helper functions |
-| `system/` | Theme Engine — generators, tokens, components, layouts |
-| `ai_memory/` | Design standards and pitch strategy documents |
-| `final_audit.py` | Automated quality audit script |
+| `Lead_Generation/` | **Part 1: THE SEARCH** — Scrapers, Leads & Orchestration |
+| &nbsp;&nbsp;├── `main.py` | Central Orchestrator (calls both parts) |
+| &nbsp;&nbsp;├── `scripts/` | Finding logic (`scraping`, `processing`, `analytics`) |
+| &nbsp;&nbsp;├── `data/` | Lead databases (`.xlsx`, `.db`) |
+| &nbsp;&nbsp;└── `logs/` | Search & Scraping logs |
+| `Client_Websites/` | **Part 2: THE STUDIO** — Website Building & Delivery |
+| &nbsp;&nbsp;├── `clients/` | Live Premium HTML/CSS client sites |
+| &nbsp;&nbsp;├── `scripts/` | Building logic (`generation`, `deployment`) |
+| &nbsp;&nbsp;├── `system/` | Theme Engine (tokens, components, layouts) |
+| &nbsp;&nbsp;└── `logs/` | Build & Deployment logs |
+| `system_prompts.md` | **The Brain** — Consolidated Source of Truth |
+| `README.md` | Master documentation |
 | `requirements.txt` | Python dependencies |
 
 ## 🌐 Live Client Portfolio

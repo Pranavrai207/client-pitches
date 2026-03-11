@@ -17,13 +17,14 @@ def generate_pitch(client_name):
         root_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
         if root_dir not in sys.path:
             sys.path.append(root_dir)
-        excel_path = os.path.join(os.path.dirname(__file__), '..', 'data', 'delhi_leads_clean.xlsx')
+        # excel_path is in the SIBLING folder Lead_Generation/data/
+        excel_path = os.path.join(root_dir, 'Lead_Generation', 'data', 'delhi_leads_clean.xlsx')
         df = pd.read_excel(excel_path)
         lead = df[df['Name'].str.contains(client_name, case=False, na=False)].iloc[0]
         
         # Create folder
         safe_name = "".join(x for x in client_name if x.isalnum() or x in " -_").strip().replace(" ", "_").lower()
-        folder = f"clients/{safe_name}"
+        folder = f"../../clients/{safe_name}"
         os.makedirs(folder, exist_ok=True)
         
         # Generate HTML (Using a logic similar to what I did for Reflections Cafe)

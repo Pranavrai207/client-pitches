@@ -37,6 +37,7 @@ def main():
     args, unknown = parser.parse_known_args()
     
     scripts_dir = "scripts"
+    build_scripts_dir = os.path.join("..", "Client_Websites", "scripts")
     
     # --- Workflow Orchestration ---
     
@@ -60,26 +61,26 @@ def main():
         if not args.client:
             print("❌ Error: --client [name] is required for pitch generation.")
             sys.exit(1)
-        run_script(os.path.join(scripts_dir, "generation", "generate_pitch.py"), [args.client])
+        run_script(os.path.join(build_scripts_dir, "generation", "generate_pitch.py"), [args.client])
 
     elif args.command == "report":
-        run_script(os.path.join(scripts_dir, "generation", "generate_report.py"))
+        run_script(os.path.join(build_scripts_dir, "generation", "generate_report.py"))
 
     elif args.command == "dashboard":
         run_script(os.path.join(scripts_dir, "analytics", "dashboard_gen.py"))
 
     elif args.command == "optimize":
-        target = args.dir or (f"clients/{args.client}/assets/images" if args.client else None)
+        target = args.dir or (f"../Client_Websites/clients/{args.client}/assets/images" if args.client else None)
         if not target:
             print("❌ Error: --client [name] or --dir [path] is required for optimization.")
             sys.exit(1)
-        run_script(os.path.join(scripts_dir, "generation", "optimize_assets.py"), [target])
+        run_script(os.path.join(build_scripts_dir, "generation", "optimize_assets.py"), [target])
 
     elif args.command == "deploy":
         if not args.client:
             print("❌ Error: --client [folder_name] is required for deployment.")
             sys.exit(1)
-        run_script(os.path.join(scripts_dir, "deployment", "deploy.py"), [args.client])
+        run_script(os.path.join(build_scripts_dir, "deployment", "deploy.py"), [args.client])
 
 if __name__ == "__main__":
     main()
