@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Yoga and Wellness | RK Puram</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 60px;
+            margin-top: 50px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        input, textarea {
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid var(--glass-border);
+            background: white;
+            font-family: inherit;
+        }
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary-sage);
+        }
+        .info-item {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .icon-box {
+            width: 50px;
+            height: 50px;
+            background: var(--accent-cream);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="glass-panel">
+        <div class="logo">
+            <h2 style="color: var(--text-deep-slate); font-size: 1.5rem;">Yoga & Wellness</h2>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <a href="contact.html" class="cta-button">Join Now</a>
+    </nav>
+
+    <section class="contact-hero" style="padding-top: 150px; text-align: center; background: var(--accent-cream);">
+        <h1 class="fade-in">Begin Your Wellness Journey</h1>
+        <p class="fade-in" style="font-size: 1.25rem;">We're here to answer your questions and help you find the right class.</p>
+    </section>
+
+    <section class="contact-content">
+        <div class="contact-container">
+            <div class="glass-panel fade-in" style="padding: 40px;">
+                <h2>Send Us a Message</h2>
+                <form id="contactForm">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <input type="tel" placeholder="Phone Number">
+                    <textarea rows="5" placeholder="How can we help you?"></textarea>
+                    <button type="submit" class="cta-button">Send Message</button>
+                </form>
+            </div>
+            <div class="fade-in">
+                <h2>Visit Our Studio</h2>
+                <div style="margin-top: 30px;">
+                    <div class="info-item">
+                        <div class="icon-box">📍</div>
+                        <div>
+                            <h4>Address</h4>
+                            <p>Mohammadpur, Rama Krishna Puram, New Delhi, Delhi 110066</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="icon-box">📞</div>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+91 XXXXX XXXXX</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="icon-box">✉️</div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@yogaandwellness.com</p>
+                        </div>
+                    </div>
+                </div>
+                <div style="width: 100%; height: 300px; border-radius: 20px; overflow: hidden; margin-top: 30px; box-shadow: var(--shadow-soft);">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14013.064714285714!2d77.1880429!3d28.5653236!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1d8c82881db1%3A0x3631f5073ec63f00!2sYoga%20and%20Wellness!5e0!3m2!1sen!2sin!4v1710500000000!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Yoga & Wellness</h4>
+                <p>Your premium destination for yoga and holistic health in New Delhi.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <ul class="footer-links">
+                    <li>Mohammadpur, RK Puram</li>
+                    <li>New Delhi, Delhi 110066</li>
+                    <li>Email: info@yogaandwellness.com</li>
+                    <li>Phone: +91 XXXXX XXXXX</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="about.html">Our Story</a></li>
+                    <li><a href="services.html">Class Schedule</a></li>
+                    <li><a href="reviews.html">Client Reviews</a></li>
+                    <li><a href="contact.html">Get in Touch</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Yoga and Wellness. All rights reserved. | <a href="https://www.google.com/maps/place/Yoga+and+Wellness/@28.5653236,77.151994,14z/" target="_blank" style="color: var(--secondary-gold);">Find us on Maps</a>
+        </div>
+    </footer>
+
+    <script src="assets/js/scripts.js"></script>
+</body>
+</html>
